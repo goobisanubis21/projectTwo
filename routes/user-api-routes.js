@@ -1,6 +1,4 @@
 var db = require("../models");
-const { where } = require("sequelize/types");
-
 module.exports = function (app) {
     app.get("/api/users/:id", function (req, res) {
         db.User.findOne({
@@ -12,9 +10,9 @@ module.exports = function (app) {
         });
     });
 
-    app.post("/api/users", function (req, res) {
+    app.post("/api/signup", function (req, res) {
         db.User.create({
-            username: req.body.username,
+            email: req.body.email,
             password: req.body.password
         }).then(function (data) {
             res.json(data);

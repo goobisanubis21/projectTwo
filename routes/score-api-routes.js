@@ -1,5 +1,4 @@
 var db = require("../models");
-const { where } = require("sequelize/types");
 
 module.exports = function (app) {
     app.get("/api/game/", function (req, res) {
@@ -20,7 +19,7 @@ module.exports = function (app) {
 
     app.post("/api/game/:userId", function (req, res) {
         db.Score.create({
-            socre: req.body.score,
+            score: req.body.score,
             UserId: req.params.userId
         }).then(function (data) {
             res.json(data);
