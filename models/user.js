@@ -59,6 +59,6 @@ module.exports = function (sequelize, DataTypes) {
     // User.beforeCreate(setSaltAndPassword)
     // User.beforeUpdate(setSaltAndPassword)
 
-    return User
+    return User;
 
 };

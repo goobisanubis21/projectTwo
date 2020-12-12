@@ -6,7 +6,6 @@ module.exports = function (app) {
             res.json(data);
         });
     });
-
     app.get("/api/game/:userId", function (req, res) {
         db.Score.findAll({
             where: {
@@ -16,7 +15,6 @@ module.exports = function (app) {
             res.json(data);
         });
     });
-
     app.post("/api/game/:userId", function (req, res) {
         db.Score.create({
             score: req.body.score,
@@ -24,8 +22,7 @@ module.exports = function (app) {
         }).then(function (data) {
             res.json(data);
         });
-    })
-
+    });
     app.delete("/api/game/:id", function (req, res) {
         db.Score.destroy({
             where: {
@@ -34,7 +31,5 @@ module.exports = function (app) {
         }).then(function (data) {
             res.json(data);
         });
-    })
-
-
+    });
 };

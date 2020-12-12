@@ -1,4 +1,5 @@
 var db = require("../models");
+
 module.exports = function (app) {
     app.get("/api/users/:id", function (req, res) {
         db.User.findOne({
