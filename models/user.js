@@ -16,6 +16,13 @@ module.exports = function (sequelize, DataTypes) {
         }
     }, { freezeTableName: true });
 
+    // all of the users scores will be deleted with them
+    User.associate = function(models){
+        User.hasMany(models.Score, {
+            onDelete: "cascade"
+        });
+    };
+
     return User
 
 };
