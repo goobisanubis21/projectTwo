@@ -1,19 +1,20 @@
-module.exports = function (sequelize, DataTypes) {
-    var User = sequelize.define("User", {
-        username: {
-            type: DataTypes.STRING,
-            validate: {
-                len: [4,10]
-            },
-            allowNull: false
-        },
-        password: {
-            type: DataTypes.STRING,
-            validate: {
-                len: [6,14]
-            },
-            allowNull: false
+module.exports = function( sequelize, DataTypes){
+    var Score = sequelize.define("Score", {
+        score: {
+            type: DataTypes.INTEGER
         }
+
+    } ,{
+        freezeTableName: true
     });
-    return User
-};
+
+    Score.associate = function(models){
+        score.belongsTo(models.User, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    };
+
+    return Score;
+}
