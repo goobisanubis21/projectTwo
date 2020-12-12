@@ -1,5 +1,4 @@
 var db = require("../models");
-//const { where } = require("sequelize/types");
 
 module.exports = function (app) {
     app.get("/api/game/", function (req, res) {

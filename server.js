@@ -12,6 +12,10 @@ var db = require("./models");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+require("./routes/html-routes.js")(app);
+require("./routes/score-api-routes.js")(app);
+require("./routes/user-api-routes.js")(app);
+
 // Syncing our sequelize models and then starting our express app
 db.sequelize.sync({ force: true }).then(function() {
     app.listen(PORT, function() {
