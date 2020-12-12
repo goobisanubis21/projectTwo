@@ -1,5 +1,5 @@
 var db = require("../models");
-const { where } = require("sequelize/types");
+//const { where } = require("sequelize/types");
 
 module.exports = function (app) {
     app.get("/api/users/:id", function (req, res) {
