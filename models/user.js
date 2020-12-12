@@ -1,4 +1,4 @@
-module.exports = function (sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes, Crypto) {
     var User = sequelize.define("User", {
         username: {
             type: DataTypes.STRING,
@@ -13,7 +13,16 @@ module.exports = function (sequelize, DataTypes) {
             validate: {
                 len: [6, 14]
             },
-            allowNull: false
+            allowNull: false,
+            get () {
+                return () => this.getDataValue('password')
+            }
+        },
+        salt: {
+            type: DataTypes.STRING,
+            get () {
+                return () => this.getDataValue('salt')
+            }    
         },
         highestScore: {
             type: DataTypes.INTEGER,
@@ -27,6 +36,28 @@ module.exports = function (sequelize, DataTypes) {
             onDelete: "cascade"
         });
     };
+
+    //automatic password encryption
+
+    User.generateSalt = function() {
+        return crypto.randomBytes(16).toString('base64')
+    }
+    User.encryptPassword = function(plainText, salt) {
+        return crypto
+            .createHash('RSA-SHA256')
+            .update(plainText)
+            .update(salt)
+            .digest('hex')
+    }
+
+    const setSaltAndPassword = user => {
+        if (user.changed('password')) {
+            user.salt = User.generateSalt()
+            user.password = User.encryptPassword(user.password(), user.salt())
+        }
+    }
+    User.beforeCreate(setSaltAndPassword)
+    User.beforeUpdate(setSaltAndPassword)
 
     return User
 
