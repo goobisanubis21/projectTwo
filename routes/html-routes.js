@@ -13,4 +13,7 @@ module.exports = function(app) {
     app.get("/highscore", function(req, res) {
         res.sendFile(path.join(__dirname, "../public/highscore.html"));
     });
+    app.get("/game", function(req, res) {
+        res.sendFile(path.join(__dirname, "../public/hangman.html"));
+    });
 };
