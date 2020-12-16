@@ -1,5 +1,5 @@
 #gameContainer {
-    width: 100vw;
+    /* width: 100vw; */
     /* height: 100vh; */
     display: flex;
     flex-direction: column;
@@ -58,7 +58,7 @@
     align-items: center;
     justify-content: flex-start;
     margin: 0px 0px 10vh 0px;
-    min-height: 80vh;
+    min-height: auto;
     width: 80%;
     max-width: 1200px;
     background-color: white;
@@ -117,4 +117,26 @@
     /* background-color: rgb(54,9,9);
     border-color: rgb(54,9,9); */
 
+}
+
+
+
+#finishModalContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    background-color: rgba(0,0,0,0.4);
+    width: 100%;
+    height: 100vh;
+    z-index: 90;
+}
+
+.finishModal {
+    height: 300px;
+    width: 600px;
+    background-color: white;
+    -webkit-box-shadow: 0px 0px 16px 10px rgba(163,163,163,0.24); 
+    box-shadow: 0px 0px 16px 10px rgba(163,163,163,0.24);
 }

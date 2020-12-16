@@ -2,9 +2,10 @@ $(document).ready(function(){
     var clicked = []
     var wordArr = []
     var numWrong = 0
+    var word
 
     $.get('/api/get-word/', function(data) {
-        var word = data.toUpperCase()
+        word = data.toUpperCase()
         console.log(word)
         
         wordArr = [...word]
@@ -38,19 +39,35 @@ $(document).ready(function(){
                 $("#letter" + e).removeClass("incorrectLetter")
             });
 
-            console.log(document.getElementsByClassName('incorrectLetter').length)
-
             if(document.getElementsByClassName('incorrectLetter').length == 0) {
-                disableAll()
+                complete()
             }
+
         }
         else {
             numWrong++;
             wrongLetter(numWrong)
+
         }
     })
 
+    $("#guessButton").on('click',function() {
+        let guess = prompt("what is your guess")
 
+        if (word == guess.toUpperCase()) {
+            complete()
+        }
+        else {
+            wrongLetter(numWrong)
+        }
+    });
+
+    $("#cancelButton").on('click',function() {
+        if(confirm("are your sure you want to quit?")) {
+            window.location.href = '/';
+        }
+    });
+    
 });
 
 
@@ -86,10 +103,18 @@ function wrongLetter(numWrong) {
     if (numWrong == 6) {
         //logic to end game
         disableAll()
-
+        $('#points').text(0);
+    }
+    else {
+        let currNum = $('#points').text()
+        $('#points').text(parseInt(currNum) - 10);
     }
 }
 
 function disableAll() {
-    $(".letterButton").prop('disabled', true)
+    $(".btn").prop('disabled', true)
+}
+
+function complete() {
+    disableAll()
 }
