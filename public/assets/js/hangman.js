@@ -1,7 +1,7 @@
 $(document).ready(function(){
     var clicked = []
     var wordArr = []
-
+    var numWrong = 0
 
     $.get('/api/get-word/', function(data) {
         var word = data.toUpperCase()
@@ -22,6 +22,7 @@ $(document).ready(function(){
     }) 
 
     $(".btn").on('click', function(){
+        $(this).prop('disabled', true)
         var letterClicked = $(this).attr('data-letter')
         clicked.push(letterClicked)
 
@@ -41,10 +42,46 @@ $(document).ready(function(){
                 $("#letter" + e).removeClass("incorrectLetter")
             });
         }
-
-
-        console.log(letterClicked)
+        else {
+            numWrong++;
+            wrongLetter(numWrong)
+        }
     })
 
 
 });
+
+
+function wrongLetter(numWrong) {
+    
+    switch (numWrong) {
+
+        case 1:
+            $("#gameImage").attr("src", "./assets/images/hangman/oneWrong.png");
+            break;
+
+        case 2:
+            $("#gameImage").attr("src", "./assets/images/hangman/twoWrong.png");
+            break;
+
+        case 3:
+            $("#gameImage").attr("src", "./assets/images/hangman/threeWrong.png");
+            break;
+
+        case 4:
+            $("#gameImage").attr("src", "./assets/images/hangman/fourWrong.png");
+            break;
+
+        case 5:
+            $("#gameImage").attr("src", "./assets/images/hangman/fiveWrong.png");
+            break;
+
+        case 6:
+            $("#gameImage").attr("src", "./assets/images/hangman/sixWrong.png");
+            break;
+    }
+
+    if (numWrong == 6) {
+        //logic to end game
+    }
+}
