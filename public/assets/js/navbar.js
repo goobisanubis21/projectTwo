@@ -10,13 +10,13 @@ $(document).ready(function () {
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Highscores</a>
+                <a class="nav-link active" aria-current="page" href="/highscores">Highscores</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Logout</a>
+                <a class="nav-link active" aria-current="page" href="/login">Logout</a>
             </li>
         </ul>
         
