@@ -2,7 +2,7 @@
   "name": "projectTwo",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon"
@@ -28,6 +28,7 @@
     "nodemon": "^2.0.6",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
+    "sat-words": "0.0.2",
     "sequelize": "^6.3.5"
   }
 }
