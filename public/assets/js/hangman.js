@@ -10,7 +10,6 @@ $(document).ready(function(){
         wordArr = [...word]
 
         var wordLen = word.length
-        console.log(wordLen)
         
         for(let i = 0; i < wordLen; i++) {
             $("#wordContainer").append(
@@ -18,10 +17,9 @@ $(document).ready(function(){
             )
 
         }
-        console.log(wordArr)
     }) 
 
-    $(".btn").on('click', function(){
+    $(".letterButton").on('click', function(){
         $(this).prop('disabled', true)
         var letterClicked = $(this).attr('data-letter')
         clicked.push(letterClicked)
@@ -35,12 +33,16 @@ $(document).ready(function(){
                 }
             });
             
-            console.log(letterIndex)
-
             letterIndex.forEach(e => {
                 $("#letter" + e).text(letterClicked)
                 $("#letter" + e).removeClass("incorrectLetter")
             });
+
+            console.log(document.getElementsByClassName('incorrectLetter').length)
+
+            if(document.getElementsByClassName('incorrectLetter').length == 0) {
+                disableAll()
+            }
         }
         else {
             numWrong++;
@@ -83,5 +85,11 @@ function wrongLetter(numWrong) {
 
     if (numWrong == 6) {
         //logic to end game
+        disableAll()
+
     }
+}
+
+function disableAll() {
+    $(".letterButton").prop('disabled', true)
 }
