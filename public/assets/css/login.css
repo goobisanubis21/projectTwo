@@ -18,7 +18,8 @@ body{
     background-color: rgb(0, 0, 0);
     padding:30px;
     /* filter:blur(10px) */
-    box-shadow:  10px 8px 10px #ffdc68
+    box-shadow:  10px 8px 10px #ffdc68;
+    opacity: 0.85;
    
 
 }
@@ -33,7 +34,7 @@ p{
     color: white
 }
 h1{
-    font-family: 'Sedgwick Ave Display', cursive;
+    font-family: 'Monofett', cursive;
     font-size: 84px;
     color:rgb(230, 183, 55);
     display: flex;
