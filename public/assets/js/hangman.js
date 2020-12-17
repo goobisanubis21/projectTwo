@@ -2,15 +2,15 @@ $(document).ready(function(){
     var clicked = []
     var wordArr = []
     var numWrong = 0
+    var word
 
     $.get('/api/get-word/', function(data) {
-        var word = data.toUpperCase()
+        word = data.toUpperCase()
         console.log(word)
         
         wordArr = [...word]
 
         var wordLen = word.length
-        console.log(wordLen)
         
         for(let i = 0; i < wordLen; i++) {
             $("#wordContainer").append(
@@ -18,10 +18,9 @@ $(document).ready(function(){
             )
 
         }
-        console.log(wordArr)
     }) 
 
-    $(".btn").on('click', function(){
+    $(".letterButton").on('click', function(){
         $(this).prop('disabled', true)
         var letterClicked = $(this).attr('data-letter')
         clicked.push(letterClicked)
@@ -35,20 +34,40 @@ $(document).ready(function(){
                 }
             });
             
-            console.log(letterIndex)
-
             letterIndex.forEach(e => {
                 $("#letter" + e).text(letterClicked)
                 $("#letter" + e).removeClass("incorrectLetter")
             });
+
+            if(document.getElementsByClassName('incorrectLetter').length == 0) {
+                complete()
+            }
+
         }
         else {
             numWrong++;
             wrongLetter(numWrong)
+
         }
     })
 
+    $("#guessButton").on('click',function() {
+        let guess = prompt("what is your guess")
 
+        if (word == guess.toUpperCase()) {
+            complete()
+        }
+        else {
+            wrongLetter(numWrong)
+        }
+    });
+
+    $("#cancelButton").on('click',function() {
+        if(confirm("are your sure you want to quit?")) {
+            window.location.href = '/';
+        }
+    });
+    
 });
 
 
@@ -83,5 +102,19 @@ function wrongLetter(numWrong) {
 
     if (numWrong == 6) {
         //logic to end game
+        disableAll()
+        $('#points').text(0);
     }
+    else {
+        let currNum = $('#points').text()
+        $('#points').text(parseInt(currNum) - 10);
+    }
+}
+
+function disableAll() {
+    $(".btn").prop('disabled', true)
+}
+
+function complete() {
+    disableAll()
 }

@@ -1,20 +1,64 @@
 #gameContainer {
-    width: 100vw;
+    /* width: 100vw; */
     /* height: 100vh; */
     display: flex;
+    flex-direction: column;
     font-size: 40px;
     justify-content: center;
     align-items: center;
     background-color: #f5f5f5;
 }
 
+.scoreContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    max-width: 1200px;
+
+    /* border: solid;
+    border-width: 3px; */
+    color: black;
+    height: auto;
+    margin: 10vh 0px 60px 0px;
+    padding: 30px 0px;
+    background-color: white;
+    -webkit-box-shadow: 0px 0px 16px 10px rgba(163,163,163,0.24); 
+    box-shadow: 0px 0px 16px 10px rgba(163,163,163,0.24);
+}
+
+.scoreContainer > p {
+    font-size: 0.75em;
+    margin-bottom: 0px;
+    /* font-weight: bold; */
+}
+
+
+.scoreContainer > * {
+    margin-right: 20px;
+}
+
+.scoreContainer > p:first-child, .scoreContainer > button {
+    margin-right: 10px;
+}
+
+.scoreContainer > button:last-child {
+    margin-right: 0px;
+}
+
+/* .scoreContainer > button {
+    height: 35px;
+    line-height: auto;
+} */
+
 .hangmanContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    margin: 10vh 0px;
-    min-height: 80vh;
+    margin: 0px 0px 10vh 0px;
+    min-height: auto;
     width: 80%;
     max-width: 1200px;
     background-color: white;
@@ -41,6 +85,9 @@
     height: auto;
     /* background-color: yellow; */
     font-size: 0.85em;
+    max-width: 80%;
+    flex-wrap: wrap;
+
 }
 
 #wordContainer > div {
@@ -60,9 +107,9 @@
 .letterContainer {
     display: flex;
     justify-content: center;
-    width: 60%;
+    width: 80%;
     flex-wrap: wrap;
-    margin-top: 30px;
+    margin: 30px 0px 40px 0px;
 }
 
 .letterContainer > button {
@@ -70,4 +117,26 @@
     /* background-color: rgb(54,9,9);
     border-color: rgb(54,9,9); */
 
+}
+
+
+
+#finishModalContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    background-color: rgba(0,0,0,0.4);
+    width: 100%;
+    height: 100vh;
+    z-index: 90;
+}
+
+.finishModal {
+    height: 300px;
+    width: 600px;
+    background-color: white;
+    -webkit-box-shadow: 0px 0px 16px 10px rgba(163,163,163,0.24); 
+    box-shadow: 0px 0px 16px 10px rgba(163,163,163,0.24);
 }
