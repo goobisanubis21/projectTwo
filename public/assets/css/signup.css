@@ -19,3 +19,21 @@ body{
    
 
 }
+#floatingInput{
+    border-radius: 12px;
+}
+
+p{
+    font-size: 20px;
+    color: white
+}
+h1{
+    font-family: 'Monofett', cursive;
+    font-size: 84px;
+    color:rgb(230, 183, 55);
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px black;
+}
