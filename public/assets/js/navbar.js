@@ -13,7 +13,10 @@ $(document).ready(function () {
                 <a class="nav-link active" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/highscores">Highscores</a>
+                <a class="nav-link active" aria-current="page" href="/highscore">Highscores</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/game">Play Hangman</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/login">Logout</a>

@@ -119,8 +119,6 @@
 
 }
 
-
-
 #finishModalContainer {
     display: flex;
     justify-content: center;
@@ -134,9 +132,22 @@
 }
 
 .finishModal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 300px;
-    width: 600px;
+    width: 95%;
+    max-width: 300px;
     background-color: white;
     -webkit-box-shadow: 0px 0px 16px 10px rgba(163,163,163,0.24); 
     box-shadow: 0px 0px 16px 10px rgba(163,163,163,0.24);
+}
+
+.finishModal > button {
+    margin: 10px 0px;
+}
+
+.hidden {
+    display: none !important;
 }
