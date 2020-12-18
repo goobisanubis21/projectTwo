@@ -10,8 +10,8 @@
 
 body{
     background-image: url('../images/background/hangdOutLogin.jpg');
-    background-repeat:no-repeat;
-    background-size:cover;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .card{
     border-radius: 12px;

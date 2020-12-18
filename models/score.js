@@ -3,7 +3,6 @@ module.exports = function( sequelize, DataTypes){
         score: {
             type: DataTypes.INTEGER
         }
-
     } ,{
         freezeTableName: true
     });
