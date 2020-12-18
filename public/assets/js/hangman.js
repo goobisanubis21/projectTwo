@@ -1,8 +1,9 @@
 $(document).ready(function(){
     var clicked = []
     var wordArr = []
-    var numWrong = 0
+    var numWrong = 0;
     var word
+    var score = 0;
 
     $.get('/api/get-word/', function(data) {
         word = data.toUpperCase()
@@ -16,7 +17,6 @@ $(document).ready(function(){
             $("#wordContainer").append(
                 `<div id="letter${i}" class="incorrectLetter"></div>`
             )
-
         }
     }) 
 
@@ -67,6 +67,14 @@ $(document).ready(function(){
             window.location.href = '/';
         }
     });
+
+    $("#tryAgain").on('click',function() {
+        window.location.href = '/game';
+    });
+
+    $("#leaveGame").on('click',function() {
+        window.location.href = '/';
+    });
     
 });
 
@@ -102,19 +110,24 @@ function wrongLetter(numWrong) {
 
     if (numWrong == 6) {
         //logic to end game
-        disableAll()
-        $('#points').text(0);
+        score = 0;
+        $('#points').text(score);
+        complete()
     }
     else {
         let currNum = $('#points').text()
-        $('#points').text(parseInt(currNum) - 10);
+        score = parseInt(currNum) - 10;
+        $('#points').text(score);
     }
 }
 
 function disableAll() {
-    $(".btn").prop('disabled', true)
+    $(".gameButton").prop('disabled', true)
 }
 
 function complete() {
     disableAll()
+    $("#finishModalContainer").removeClass('hidden')
+    $("#finalScore").text(score);
+    //add function to push final score
 }
