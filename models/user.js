@@ -17,7 +17,7 @@ module.exports = function (sequelize, DataTypes) {
       },
       allowNull: false,
     },
-    highestScore: {
+    winStreak: {
       type: DataTypes.INTEGER,
       defaultValue: 0
     }
