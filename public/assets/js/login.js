@@ -2,7 +2,7 @@ $(document).ready(function() {
     var emailInput = $("#username");
     var passwordInput = $("#password");
   
-    loginForm.on("submit", function(event) {
+    loginForm.on("click", function(event) {
       event.preventDefault();
       var user = {
         email: emailInput.val().trim(),
