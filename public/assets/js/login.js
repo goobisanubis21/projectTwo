@@ -22,12 +22,10 @@ $(document).ready(function() {
       $.post("/api/login", {
         email: email,
         password: password
-      })
-        .then(function() {
-          window.location.replace("/");
-        })
-        .catch(function(err) {
-          console.log(err);
-        });
+      }).then(function() {
+        window.location.replace("/");
+      }).catch(function(err) {
+        console.log(err);
+      });
     }
   });
