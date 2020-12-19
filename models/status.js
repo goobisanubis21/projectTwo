@@ -7,13 +7,6 @@ module.exports = function(sequelize, DataTypes) {
           len: [1,240]
         }
       },
-      userId: {
-        type: DataTypes.Integer,
-        allowNull: false,
-        validate: {
-          len: [1, 100]
-        }
-      }
     },{
         freezeTableName: true
     });

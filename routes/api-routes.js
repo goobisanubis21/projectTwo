@@ -12,22 +12,17 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/api/:userId/status", function(req, res) {
-    db.Status.findAll({
-      where: {
-        userId: req.params.userId
-      }
-    }).then(function(dbStatus) {
+  app.get("/api/status", function(req, res) {
+    db.Status.findAll({}).then(function(dbStatus) {
       res.json(dbStatus);
     });
   });
 
 
   // Get route for retrieving a single post
-  app.get("/api/:userId/status/:id", function(req, res) {
+  app.get("/api/status/:id", function(req, res) {
     db.Status.findOne({
       where: {
-        userId: req.params.userId,
         id: req.params.id
       }
     }).then(function(dbStatus) {
@@ -58,12 +53,11 @@ module.exports = function(app) {
   });
 
   // PUT route for updating posts
-  app.put("/api/:userId/status/", function(req, res) {
+  app.put("/api/status/", function(req, res) {
     db.Status.update(req.body,
       {
         where: {
           id: req.body.id,
-          userId: req.params.userId
         }
       }).then(function(dbStatus) {
         res.json(dbStatus);
