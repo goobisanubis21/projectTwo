@@ -1,4 +1,5 @@
 // Requiring our Status model
+const { query } = require("express");
 var db = require("../models");
 
 // Routes
@@ -13,10 +14,31 @@ module.exports = function(app) {
   });
 
   app.get("/api/status/", function(req, res) {
-    db.Status.findAll({
-      where: {},
-      include: [db.User]
-    }).then(function(dbStatus) {
+    // var query = {};
+    // if (req.query.UserId) {
+    //   query.UserId = req.query.id;
+    // }
+
+    // db.Status.findAll({include: [db.User]}
+    db.Status.findAll(
+      {
+      // include: [db.User],
+      // where: {
+      //   id: req.UserId
+      // }
+
+      include: [{
+        model: User,
+        as: "Status",
+        where: {
+          UserId: id
+        }
+      }]
+
+    }
+    
+    
+    ).then(function(dbStatus) {
       res.json(dbStatus);
     });
   });
