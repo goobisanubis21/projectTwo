@@ -12,13 +12,14 @@ $(document).ready(function (){
             }).then(function () {
                 statusArea.empty();
                 $.get("/api/status/").then(function (data) {
+                    console.log(data);
                     for(let i = 0; i < data.length; i++) {
                         let card = $("<div>").addClass("card");
                         let cardBody = $("<div>").addClass("card-body");
                         card.append(cardBody);
     
                         let cardTitle = $("<h5>").addClass("card-title");
-                        cardTitle.text();
+                        cardTitle.text(data[i].UserId);
                         cardBody.append(cardTitle);
     
                         let cardText = $("<p>").addClass("card-text");
