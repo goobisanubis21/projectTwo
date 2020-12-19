@@ -23,11 +23,7 @@ $(document).ready(function () {
             email: name,
             password: password
         }).then(function (data) {
-            localStorage.setItem("user", res.id);
-
-            setTimeout(function() {
-                window.location.replace("/");
-            }, 3000);
+            window.location.replace("/");
         }).catch(handleErr);
     }
 

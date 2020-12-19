@@ -1,10 +1,9 @@
 $(document).ready(function (){
-    const id = localStorage.getItem("user");
     const statusArea = $("#statuses");
 
     $("#btnSubmit").on("click", function() {
-        $.post(`/api/${id}/status`, {
-            text: $("#statsUpdate").val()
+        $.post("/api/status", {
+            text: $("#statusUpdate").val()
         }).then(function () {
             statusArea.empty();
             $.get("/api/status").then(function (data) {

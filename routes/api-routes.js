@@ -31,11 +31,10 @@ module.exports = function(app) {
   });
 
   // POST route for saving a new post
-  app.post("/api/:userId/status/", function(req, res) {
+  app.post("/api/status/", function(req, res) {
     console.log(req.body);
     db.Status.create({
-      text: req.body.text,
-      userId: req.params.userId
+      text: req.body.text
     }).then(function(dbStatus) {
       res.json(dbStatus);
     });
