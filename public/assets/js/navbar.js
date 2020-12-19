@@ -8,7 +8,7 @@ $(document).ready(function () {
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-4">
             <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/">Home</a>
             </li>
@@ -25,6 +25,16 @@ $(document).ready(function () {
         
          
     </div>
+    
 </div>
-</nav>`);
+</nav>
+
+<div class="sidenav">
+        <a href="">
+            <h1> HangdOut </h1></a>
+        <a href="">Dunno</a>
+        <a href="">Highscores</a>
+        <a href="">Games</a>
+        <a href="">Logout</a>
+    </div>`);
 });

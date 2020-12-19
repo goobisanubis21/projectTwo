@@ -19,7 +19,6 @@ $(document).ready(function () {
     });
 
     function postToServer(name, password){
-        console.log("hello world, i eat ass")
         $.post("/api/signup", {
             email: name,
             password: password

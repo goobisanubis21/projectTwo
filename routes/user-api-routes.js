@@ -12,7 +12,7 @@ module.exports = function (app) {
     });
   });
 
-  app.post("/api/login", passport.authenticate("local"), function(req, res) {
+  app.post("/api/login", passport.authenticate("local"), function (req, res) {
     res.json(req.user);
   });
 
@@ -49,11 +49,25 @@ module.exports = function (app) {
   //   });
   // });
 
-  app.get("/api/user", function(req, res) {
+  app.put("/api/user-password/:id", function (req, res) {
+    db.User.update({
+      password: req.body.password
+    }, {
+      where: {
+        id: req.params.id
+      }
+    }).then(function (data) {
+      res.json(data);
+    }).catch(function (err) {
+      res.json(err);
+    });
+  });
+
+  app.get("/api/user", function (req, res) {
     if (!req.user) {
       res.json({});
     } else {
-      res.json({
+      var id = res.json({
         email: req.user.email,
         id: req.user.id
       });

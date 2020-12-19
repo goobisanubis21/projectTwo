@@ -25,6 +25,7 @@ app.use(passport.session());
 require("./routes/html-routes.js")(app);
 require("./routes/score-api-routes.js")(app);
 require("./routes/user-api-routes.js")(app);
+require("./routes/api-routes.js")(app);
 require("./routes/get-word.js")(app);
 
 

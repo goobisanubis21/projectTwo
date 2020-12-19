@@ -26,11 +26,10 @@ $(document).ready(function () {
         $.post("/api/login", {
             email: email,
             password: password
-        }).then(function () {
+        }).then(function (data) {
             window.location.replace("/");
-        })
-        // .catch(function (err) {
-        //     console.log(err);
-        // });
+        }).catch(function (err) {
+             console.log(err);
+        });
     }
 });
