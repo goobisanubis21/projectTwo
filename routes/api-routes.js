@@ -6,14 +6,17 @@ var db = require("../models");
 module.exports = function(app) {
 
   // GET route for getting all of the posts
-  app.get("/api/status", function(req, res) {
+  app.get("/api/status/", function(req, res) {
     db.Status.findAll({}).then(function(dbStatus) {
       res.json(dbStatus);
     });
   });
 
-  app.get("/api/status", function(req, res) {
-    db.Status.findAll({}).then(function(dbStatus) {
+  app.get("/api/status/", function(req, res) {
+    db.Status.findAll({
+      where: {},
+      include: [db.User]
+    }).then(function(dbStatus) {
       res.json(dbStatus);
     });
   });
@@ -34,7 +37,8 @@ module.exports = function(app) {
   app.post("/api/status/", function(req, res) {
     console.log(req.body);
     db.Status.create({
-      text: req.body.text
+      text: req.body.text,
+      UserId: req.body.id
     }).then(function(dbStatus) {
       res.json(dbStatus);
     });
