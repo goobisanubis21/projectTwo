@@ -20,7 +20,20 @@ module.exports = function (sequelize, DataTypes) {
     winStreak: {
       type: DataTypes.INTEGER,
       defaultValue: 0
+    },
+    combineScore: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0
+    },
+    currWinStreak: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0
+    },
+    currCombineScore: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0
     }
+
   }, { freezeTableName: true });
 
   // all of the users scores will be deleted with them
