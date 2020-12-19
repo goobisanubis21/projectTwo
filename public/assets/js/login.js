@@ -26,11 +26,13 @@ $(document).ready(function () {
         $.post("/api/login", {
             email: email,
             password: password
-        }).then(function () {
+        }).then(function (data) {
+            setTimeout(function(){
+                localStorage.setItem("user", data.id);
+            }, 3000);
             window.location.replace("/");
-        })
-        // .catch(function (err) {
-        //     console.log(err);
-        // });
+        }).catch(function (err) {
+             console.log(err);
+        });
     }
 });

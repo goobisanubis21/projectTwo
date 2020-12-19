@@ -12,7 +12,7 @@ module.exports = function (app) {
     });
   });
 
-  app.post("/api/login", passport.authenticate("local"), function(req, res) {
+  app.post("/api/login", passport.authenticate("local"), function (req, res) {
     res.json(req.user);
   });
 
@@ -62,11 +62,12 @@ module.exports = function (app) {
       res.json(err);
     });
   });
-  app.get("/api/user", function(req, res) {
+
+  app.get("/api/user", function (req, res) {
     if (!req.user) {
       res.json({});
     } else {
-      res.json({
+      var id = res.json({
         email: req.user.email,
         id: req.user.id
       });
