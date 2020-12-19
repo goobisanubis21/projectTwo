@@ -25,35 +25,17 @@
     </div>
 
     <div class="container" id="inputArea">
-
-        <div class="form-group col-md-4">
-            <label for="statusUpdate">Update Status</label>
-            <textarea id="statusUpdate" class="form-control"> </textarea>
-            </br>
-            <button class="btn btn-info" id="btnSubmit" type="submit"> Post </button>
-        </div>
-        </br>
-
-
-        <!-- car would dynamically be added via javascript?? every time a status update is pushed the text should automatically preppend to the page in a card form
-        I think this below card will prob move onto a js page -->
-
-        <!-- <div class="container">
-        <div class="card mb-3" id ="status" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="..." alt="...">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-              </div>
-            </div>
-          </div> -->
+      <div class="form-group col-md-4">
+          <label for="statusUpdate">Update Status</label>
+          <textarea id="statusUpdate" class="form-control"> </textarea>
+          </br>
+        <button class="btn btn-info" id="btnSubmit" type="submit"> Post </button>
+      </div>
+      </br>
     </div>
+
+    <div class="container" id="statuses"></div>
+    
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="./assets/js/navbar.js"></script>
     <div class="container" id="background">
