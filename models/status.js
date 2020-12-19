@@ -14,6 +14,17 @@ module.exports = function(sequelize, DataTypes) {
           len: [1, 100]
         }
       }
+    },{
+        freezeTableName: true
     });
+
+    Status.associate = function(models){
+        Status.belongsTo(models.User,{
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    };
+
     return Status;
   };
