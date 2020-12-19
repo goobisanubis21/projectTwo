@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $("body").prepend(` <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    $("body").prepend(` <nav class="navbar navbar-expand-lg navbar-light bg-light" id="zIndex">
 <div class="container-fluid">
     <a class="navbar-brand" href="#">HangdOut</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -13,7 +13,10 @@ $(document).ready(function () {
                 <a class="nav-link active" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/highscores">Highscores</a>
+                <a class="nav-link active" aria-current="page" href="/highscore">Highscores</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/game">Play Hangman</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/login">Logout</a>
