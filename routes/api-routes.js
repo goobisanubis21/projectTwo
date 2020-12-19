@@ -13,7 +13,10 @@ module.exports = function(app) {
   });
 
   app.get("/api/status/", function(req, res) {
-    db.Status.findAll({}).then(function(dbStatus) {
+    db.Status.findAll({
+      where: {},
+      include: [db.User]
+    }).then(function(dbStatus) {
       res.json(dbStatus);
     });
   });

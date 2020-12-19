@@ -9,6 +9,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/index.css">
     <title>HangdOut</title>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="./assets/js/index.js"></script>
 </head>
 
 <body>
@@ -25,22 +27,20 @@
     </div> -->
 
     <div class="container" id="inputArea">
-      <div class="form-group col-md-4">
-          <label for="statusUpdate">Update Status</label>
-          <textarea id="statusUpdate" class="form-control"> </textarea>
-          </br>
-        <button class="btn btn-info" id="btnSubmit" type="submit"> Post </button>
-      </div>
-      </br>
+        <div class="form-group col-md-4">
+            <label for="statusUpdate">Update Status</label>
+            <textarea id="statusUpdate" class="form-control"> </textarea>
+            <button class="btn btn-info" id="btnSubmit" type="submit"> Post </button>
+        </div>
+        </br>
     </div>
 
     <div class="container" id="statuses"></div>
 
-    <script src="https://code.jquery.com/jquery.js"></script>
     <script src="./assets/js/navbar.js"></script>
-    <div class="container" id="background">
+    <!-- <div class="container" id="background">
         <img id="imgBK" src="./assets/images/background/indexBackground.jpg">
-    </div>
+    </div> -->
 </body>
 
 </html>

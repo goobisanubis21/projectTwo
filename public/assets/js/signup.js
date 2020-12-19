@@ -24,10 +24,6 @@ $(document).ready(function () {
             password: password
         }).then(function (data) {
             window.location.replace("/");
-        }).catch(handleErr);
-    }
-
-    function handleErr(err) {
-        $("#error").text(err.responseJSON);
+        });
     }
 });

@@ -2,11 +2,10 @@ $(document).ready(function (){
     const statusArea = $("#statuses");
     var userId;
 
-    $.get("/api/user", function (res){
-        userId = res.id;
+    $.get("/api/user/", function (data){
+        userId = data.id;
     }).then(function () {
         $("#btnSubmit").on("click", function() {
-            console.log($("#statusUpdate").val());
             $.post("/api/status/", {
                 text: $("#statusUpdate").val(),
                 id: userId
@@ -19,7 +18,7 @@ $(document).ready(function (){
                         card.append(cardBody);
     
                         let cardTitle = $("<h5>").addClass("card-title");
-                        cardTitle.text(data[i].id);
+                        cardTitle.text();
                         cardBody.append(cardTitle);
     
                         let cardText = $("<p>").addClass("card-text");
