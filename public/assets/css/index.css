@@ -3,32 +3,68 @@
     justify-content: center;
 }
 
-.container-fluid{
-  background-color: rgb(32, 190, 143);
+body{
+  background-color: rgb(231, 231, 231);
+  
 }
+.container-fluid{
+  background-color:  rgb(32, 190, 143);
+  
+  z-index: 1;
+  left: 2
+}
+
+h1{
+  font-family: 'Monofett', cursive;
+  font-size: 45px;
+  color: purple;
+}
+.navbar-expand-lg{
+  padding-left: 250px;
+}
+
+/* #imgBK{
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 250px;
+  z-index: 2;
+  opacity: .5;
+} 
+
+#zIndex{
+  z-index: 100;
+  
+} */
 
 .sidenav {
     height: 100%;
     width: 250px;
     position: fixed;
     z-index: 1;
-    top: 1;
+    top: 0;
     left: 0;
     background-color: rgb(32, 190, 143);
     overflow-x: hidden;
-    padding-top: 20px;
+    /* padding-top: 10px; */
+
+    /* background-image: url('../images/background/sidebar2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: .85; */
   }
   
   .sidenav a {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
     font-size: 25px;
-    color: #000000;
+    color: white;
     display: block;
   }
   
   .sidenav a:hover {
-    color: #f1f1f1;
+    color: purple;
   }
 
   #status{
@@ -38,7 +74,7 @@
 
   .material-icons{
       font-size: 24px;
-      color: rgb(0, 0, 0)
+      color: purple
   }
   
   .main {
