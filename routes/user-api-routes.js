@@ -35,33 +35,20 @@ module.exports = function (app) {
     });
   });
 
-  app.put("/api/user-score/:id/:score", function (req, res) {
-    db.User.update({
-      highestScore: req.params.score
-    }, {
-      where: {
-        id: req.params.id
-      }
-    }).then(function (data) {
-      res.json(data);
-    }).catch(function (err) {
-      res.json(err);
-    });
-  });
+  // app.put("/api/user-password/:id", function (req, res) {
+  //   db.User.update({
+  //     password: req.body.password
+  //   }, {
+  //     where: {
+  //       id: req.params.id
+  //     }
+  //   }).then(function (data) {
+  //     res.json(data);
+  //   }).catch(function (err) {
+  //     res.json(err);
+  //   });
+  // });
 
-  app.put("/api/user-password/:id", function (req, res) {
-    db.User.update({
-      password: req.body.password
-    }, {
-      where: {
-        id: req.params.id
-      }
-    }).then(function (data) {
-      res.json(data);
-    }).catch(function (err) {
-      res.json(err);
-    });
-  });
   app.get("/api/user", function(req, res) {
     if (!req.user) {
       res.json({});
