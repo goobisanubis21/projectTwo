@@ -16,10 +16,6 @@ module.exports = function (sequelize, DataTypes) {
         len: [6, 14]
       },
       allowNull: false,
-    },
-    winStreak: {
-      type: DataTypes.INTEGER,
-      defaultValue: 0
     }
   }, { freezeTableName: true });
 
