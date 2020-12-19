@@ -79,8 +79,7 @@ $(document).ready(function () {
                     complete()
                 }
                 else {
-                    let currNum = $('#points').text()
-                    score = parseInt(currNum) - 10;
+                    numWrong++;
                     wrongLetter(numWrong)
                 }
             });
