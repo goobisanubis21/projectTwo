@@ -25,6 +25,18 @@ $(document).ready(function () {
         
          
     </div>
+    
 </div>
-</nav>`);
+</nav>
+
+<div class="sidenav">
+        <a href=""> <span class="material-icons">
+                home
+            </span>
+            Home</a>
+        <a href="">Dunno</a>
+        <a href="">Highscores</a>
+        <a href="">Games</a>
+        <a href="">Logout</a>
+    </div>`);
 });

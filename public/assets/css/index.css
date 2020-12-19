@@ -3,12 +3,16 @@
     justify-content: center;
 }
 
+.container-fluid{
+  background-color: rgb(32, 190, 143);
+}
+
 .sidenav {
     height: 100%;
     width: 250px;
     position: fixed;
     z-index: 1;
-    top: 0;
+    top: 1;
     left: 0;
     background-color: rgb(32, 190, 143);
     overflow-x: hidden;
