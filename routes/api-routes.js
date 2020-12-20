@@ -12,37 +12,6 @@ module.exports = function(app) {
     });
   });
 
-  // app.get("/api/status/", function(req, res) {
-  //   // var query = {};
-  //   // if (req.query.UserId) {
-  //   //   query.UserId = req.query.id;
-  //   // }
-
-  //   // db.Status.findAll({include: [db.User]}
-  //   db.User.findOne(
-  //     {
-  //     // include: [db.User],
-  //     // where: {
-  //     //   id: req.UserId
-  //     // }
-
-  //     // include: [{
-  //     //   model: User,
-  //     //   as: "Status",
-  //     //   where: {
-  //     //     UserId: id
-  //     //   }
-  //     // }]
-
-  //   }
-    
-    
-  //   ).then(function(dbStatus) {
-  //     res.json(dbStatus);
-  //   });
-  // });
-
-
   // Get route for retrieving a single post
   app.get("/api/status/:id", function(req, res) {
     db.Status.findOne({
