@@ -7,20 +7,10 @@ module.exports = function(app) {
 
   // GET route for getting all of the posts
   app.get("/api/status/", function(req, res) {
-    db.Status.findAll({}).then(function(dbStatus) {
+    db.Status.findAll({include: [{model: db.User}]}).then(function(dbStatus) {
       res.json(dbStatus);
     });
   });
-
-  app.get("/api/status/", function(req, res) {
-    db.Status.findAll({
-      where: {},
-      include: [db.User]
-    }).then(function(dbStatus) {
-      res.json(dbStatus);
-    });
-  });
-
 
   // Get route for retrieving a single post
   app.get("/api/status/:id", function(req, res) {
