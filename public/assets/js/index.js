@@ -9,7 +9,7 @@ $(document).ready(function (){
             card.append(cardBody);
 
             let cardTitle = $("<h5>").addClass("card-title");
-            cardTitle.text(data[i].UserId);
+            cardTitle.text(data[i].User.email);
             cardBody.append(cardTitle);
 
             let cardText = $("<p>").addClass("card-text");
@@ -39,7 +39,7 @@ $(document).ready(function (){
                         card.append(cardBody);
     
                         let cardTitle = $("<h5>").addClass("card-title");
-                        cardTitle.text(data[i].UserId);
+                        cardTitle.text(data[i].User.email);
                         cardBody.append(cardTitle);
     
                         let cardText = $("<p>").addClass("card-text");
@@ -49,6 +49,7 @@ $(document).ready(function (){
                         if(data[i].UserId === userId){
                             let delBtn = $("<button>").addClass("btn btn-warning");
                             delBtn.attr("type", "button");
+                            delBtn.text("Delete")
                             cardBody.append(delBtn);
                         }
 

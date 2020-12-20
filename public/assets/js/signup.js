@@ -23,7 +23,9 @@ $(document).ready(function () {
             email: name,
             password: password
         }).then(function (data) {
-            window.location.replace("/");
+            $.post("/api/game/" + data.id, function(data) {
+                window.location.replace("/login");
+            })
         });
     }
 });
