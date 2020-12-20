@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/reset.css" type="text/css">
+    <!-- <link rel="stylesheet" href="./assets/css/reset.css" type="text/css"> -->
     <link rel="stylesheet" href="./assets/css/highscore.css" type="text/css">
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -24,11 +24,9 @@
                 <div id="userScore" class="row">
                     <div id="uStreak" class="col-sm">
                         <h3>Your WinStreak</h3>
-
                     </div>
                     <div id="uScore" class="col-sm">
                         <h3>Your Combine Score</h3>
-
                     </div>
                 </div>
             </div>
@@ -37,18 +35,21 @@
                     <h1>Global Leaderboards</h1>
                 </div>
                 <div id="globalScore" class="row">
-                    <ol id="gUser" class="col-sm">
+                    <div class="col-sm">
                         <h3>Username</h3>
+                        <ol id="gUser"></ol>
 
-                    </ol>
-                    <ol id="gStreak" class="col-sm">
+                    </div>
+                    <div class="col-sm">
                         <h3>Top WinStreak</h3>
+                        <ol id="gStreak"></ol>
 
-                    </ol>
-                    <ol id="gScore" class="col-sm">
+                    </div>
+                    <div class="col-sm">
                         <h3>Top Combine Score</h3>
+                        <ol id="gScore"></ol>
 
-                    </ol>
+                    </div>
                 </div>
             </div>
         </div>
