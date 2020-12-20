@@ -26,3 +26,4 @@ function addToRow(rowId,val,id) {
         `<li id="${id}">${val}</li>`
     )
 }
+

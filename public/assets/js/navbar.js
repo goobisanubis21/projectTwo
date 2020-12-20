@@ -38,5 +38,20 @@ $(document).ready(function () {
         <a href="">Highscores</a>
         <a href="">Games</a>
         <a href="">Logout</a>
+        <button id = "deleteMe">Delete Account</button>
     </div>`);
+
+    $("#deleteMe").on("click", function() {
+        var userId;
+        $.get("/api/user", function(data) {
+            userId = data.id;
+        }).then(function() {
+            $.ajax ({
+                method: "DELETE",
+                url: "/api/users/" + userId
+            }).then(function() {
+                window.replace("/login")
+            })
+        })
+    })
 });

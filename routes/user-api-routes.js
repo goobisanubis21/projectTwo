@@ -35,20 +35,6 @@ module.exports = function (app) {
     });
   });
 
-  // app.put("/api/user-password/:id", function (req, res) {
-  //   db.User.update({
-  //     password: req.body.password
-  //   }, {
-  //     where: {
-  //       id: req.params.id
-  //     }
-  //   }).then(function (data) {
-  //     res.json(data);
-  //   }).catch(function (err) {
-  //     res.json(err);
-  //   });
-  // });
-
   app.put("/api/user-password/:id", function (req, res) {
     db.User.update({
       password: req.body.password
