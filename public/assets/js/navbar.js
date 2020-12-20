@@ -1,5 +1,7 @@
 $(document).ready(function () {
-    $("body").prepend(` <nav class="navbar navbar-expand-lg navbar-light bg-light" id="zIndex">
+    $("body").prepend(` 
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="zIndex">
 <div class="container-fluid">
     <a class="navbar-brand" href="#">HangdOut</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
