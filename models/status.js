@@ -15,7 +15,8 @@ module.exports = function(sequelize, DataTypes) {
         Status.belongsTo(models.User,{
             foreignKey: {
                 allowNull: false
-            }
+            },
+            onDelete: "cascade"
         });
     };
 
