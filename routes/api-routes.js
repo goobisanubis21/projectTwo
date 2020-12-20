@@ -1,5 +1,4 @@
 // Requiring our Status model
-const { query } = require("express");
 var db = require("../models");
 
 // Routes
@@ -8,40 +7,40 @@ module.exports = function(app) {
 
   // GET route for getting all of the posts
   app.get("/api/status/", function(req, res) {
-    db.Status.findAll({}).then(function(dbStatus) {
+    db.Status.findAll({include: [{model: db.User}]}).then(function(dbStatus) {
       res.json(dbStatus);
     });
   });
 
-  app.get("/api/status/", function(req, res) {
-    // var query = {};
-    // if (req.query.UserId) {
-    //   query.UserId = req.query.id;
-    // }
+  // app.get("/api/status/", function(req, res) {
+  //   // var query = {};
+  //   // if (req.query.UserId) {
+  //   //   query.UserId = req.query.id;
+  //   // }
 
-    // db.Status.findAll({include: [db.User]}
-    db.Status.findAll(
-      {
-      // include: [db.User],
-      // where: {
-      //   id: req.UserId
-      // }
+  //   // db.Status.findAll({include: [db.User]}
+  //   db.User.findOne(
+  //     {
+  //     // include: [db.User],
+  //     // where: {
+  //     //   id: req.UserId
+  //     // }
 
-      include: [{
-        model: User,
-        as: "Status",
-        where: {
-          UserId: id
-        }
-      }]
+  //     // include: [{
+  //     //   model: User,
+  //     //   as: "Status",
+  //     //   where: {
+  //     //     UserId: id
+  //     //   }
+  //     // }]
 
-    }
+  //   }
     
     
-    ).then(function(dbStatus) {
-      res.json(dbStatus);
-    });
-  });
+  //   ).then(function(dbStatus) {
+  //     res.json(dbStatus);
+  //   });
+  // });
 
 
   // Get route for retrieving a single post
