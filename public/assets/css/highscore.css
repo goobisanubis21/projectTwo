@@ -20,7 +20,7 @@ p {
 }
 
 #backgroundColor {
-    background-color:#f5f5f5;
+    background-color:#DCEBF5;
     min-height: calc(100vh - 56px);
     padding: 40px 0px;
     
@@ -43,6 +43,10 @@ p {
 #leaderboard {
     width: 60%;
     border-radius: 15px;
+}
+
+body {
+    background-color: #DCEBF5;
 }
 
 
