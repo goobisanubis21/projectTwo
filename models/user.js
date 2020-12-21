@@ -16,6 +16,10 @@ module.exports = function (sequelize, DataTypes) {
         len: [6, 14]
       },
       allowNull: false,
+    },
+    availablePoints: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0
     }
   }, { freezeTableName: true });
 

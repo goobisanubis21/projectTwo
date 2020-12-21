@@ -35,18 +35,31 @@ module.exports = function (app) {
     });
   });
 
-  app.put("/api/user-password/:id", function (req, res) {
+  // app.put("/api/user-password/:id", function (req, res) {
+  //   db.User.update({
+  //     password: req.body.password
+  //   }, {
+  //     where: {
+  //       id: req.params.id
+  //     }
+  //   }).then(function (data) {
+  //     res.json(data);
+  //   }).catch(function (err) {
+  //     res.json(err);
+  //   });
+  // });
+
+  //update user points available
+  app.put("/api/user-points/:id/:points", function (req, res) {
     db.User.update({
-      password: req.body.password
+      availablePoints: req.params.points
     }, {
       where: {
         id: req.params.id
       }
     }).then(function (data) {
       res.json(data);
-    }).catch(function (err) {
-      res.json(err);
-    });
+    })
   });
 
   app.get("/api/user", function (req, res) {
@@ -55,7 +68,8 @@ module.exports = function (app) {
     } else {
       var id = res.json({
         email: req.user.email,
-        id: req.user.id
+        id: req.user.id,
+        points: req.user.availablePoints
       });
     }
   });

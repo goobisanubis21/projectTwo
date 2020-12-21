@@ -8,18 +8,20 @@ $(document).ready(function () {
     var userData;
     var userId;
 
+    var userPoints
+
     $.get('/api/user', function (data) {
-        console.log(data)
         userId = data.id
+        userPoints = data.points
+
+        console.log(data)
     }).then(function () {
         $.get('/api/game/' + userId, function (data) {
             userData = data[0];
-            console.log(userData)
 
             //
             $.get('/api/get-word/', function (data) {
                 word = data.toUpperCase()
-                console.log(word)
 
                 wordArr = [...word]
 
@@ -136,6 +138,7 @@ $(document).ready(function () {
                     $('#points').text(score);
                     complete()
                 }
+                
                 else {
                     let currNum = $('#points').text()
                     score = parseInt(currNum) - 10;
@@ -157,6 +160,9 @@ $(document).ready(function () {
                     resetWin()
                 }
                 else {
+                    console.log(score + userPoints)
+
+                    updatePoints(userData.UserId,score + userPoints)
 
                     currWinStreak++;
                     currCombineScore += score;
@@ -202,6 +208,24 @@ $(document).ready(function () {
                 $.ajax({
                     method: "PUT",
                     url:"/api/game-best/" + userId + "/" + currWinStreak + "/" + currCombineScore
+                }).then(function(res){
+
+                })
+            }
+
+            function updatePoints(id,points) {
+                // $.post("/api/user-points/", {
+                //     availablePoints: userData.availablePoints + points,
+                //     id: id
+                // }).then(function (data) {
+                    
+                // });
+
+                console.log(id)
+
+                $.ajax({
+                    method: "PUT",
+                    url:"/api/user-points/" + id + "/" + points,
                 }).then(function(res){
 
                 })
