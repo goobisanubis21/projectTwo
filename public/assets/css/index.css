@@ -14,15 +14,6 @@ body{
   left: 2
 }
 
-h1{
-  font-family: 'Monofett', cursive;
-  font-size: 45px;
-  color: purple;
-}
-.navbar-expand-lg{
-  padding-left: 250px;
-}
-
 /* #imgBK{
   height: 100%;
   width: 100%;
@@ -38,52 +29,18 @@ h1{
   
 } */
 
-.sidenav {
-    height: 100%;
-    width: 250px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: rgb(32, 190, 143);
-    overflow-x: hidden;
-    /* padding-top: 10px; */
+#status{
+    position: relative;
+    float: right;
+}
 
-    /* background-image: url('../images/background/sidebar2.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: .85; */
-  }
+.material-icons{
+    font-size: 24px;
+    color: purple
+}
   
-  .sidenav a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    color: white;
-    display: block;
-  }
-  
-  .sidenav a:hover {
-    color: purple;
-  }
-
-  #status{
-      position: relative;
-      float: right;
-  }
-
-  .material-icons{
-      font-size: 24px;
-      color: purple
-  }
-  
-  .main {
-    margin-left: 160px; /* Same as the width of the sidenav */
-    font-size: 28px; /* Increased text to enable scrolling */
-    padding: 0px 10px;
-  }
-  
-  @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-  }
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
