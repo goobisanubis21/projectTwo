@@ -2,7 +2,7 @@ $(document).ready(function () {
     $("body").prepend(`
 <div class="sidenav">
         <a href="/">
-            <h1 id="navTitle"> HangdOut </h1></a>
+        <h1 id="navTitle"> HangdOut </h1></a>
         <a href="/">Home</a>
         <a href="/highscore">Highscores</a>
         <a href="/game">Play Hangman</a>
