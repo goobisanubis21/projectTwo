@@ -1,40 +1,32 @@
-#inputArea{
+#inputArea {
     display: flex;
     justify-content: center;
 }
 
-body{
+body {
   background-color: rgb(231, 231, 231);
-  
 }
-.container-fluid{
+
+#descript {
+  text-align: center;
+  width: 1000px;
+  margin-left: 25%;
+  margin-bottom: 40px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.container-fluid {
   background-color:  rgb(32, 190, 143);
-  
   z-index: 1;
   left: 2
 }
 
-/* #imgBK{
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  top: 0px;
-  left: 250px;
-  z-index: 2;
-  opacity: .5;
-} 
-
-#zIndex{
-  z-index: 100;
-  
-} */
-
-#status{
+#status {
     position: relative;
     float: right;
 }
 
-.material-icons{
+.material-icons {
     font-size: 24px;
     color: purple
 }
