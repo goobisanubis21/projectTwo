@@ -18,8 +18,8 @@ $(document).ready(function () {
             id: userId
         }).then(function () {
             statusArea.empty();
+            storePoints (userId,points - $("#statusUpdate").val().length)
             getStatus ()
-
         });
     });
 
@@ -97,4 +97,13 @@ $(document).ready(function () {
         console.log(wordLen)
         $("#pointEl").text(points - wordLen)
     })
+
+    function storePoints (id,points) {
+        $.ajax({
+            method: "PUT",
+            url:"/api/user-points/" + id + "/" + points,
+        }).then(function(res){
+
+        })
+    }
 });
