@@ -31,7 +31,7 @@ $(document).ready(function () {
                 method: "DELETE",
                 url: "/api/users/" + userId
             }).then(function () {
-                window.location.replace("/login")
+                window.location.replace("/login");
             });
         });
     });
@@ -40,12 +40,10 @@ $(document).ready(function () {
         if (openNav) {
             $("#navbar").addClass("sidenavCollapsed");
             $("body").css("margin-left", "0px");
-            // $("#hideNav").text("Expand")
             openNav = false;
         } else {
             $("#navbar").removeClass("sidenavCollapsed");
-            $("body").css("margin-left", "250px")
-            // $("#hideNav").text("Collapse")
+            $("body").css("margin-left", "250px");
             openNav = true;
         }
     });

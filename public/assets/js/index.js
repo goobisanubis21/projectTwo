@@ -79,7 +79,7 @@ $(document).ready(function () {
 
     function getPoints(userId) {
         $.get("/api/users/" + userId, function(data) {
-            points = data.availablePoints
+            points = data.availablePoints;
             console.log(points);
         }).then(function() {
             let pointEl = $("<p>");
@@ -94,16 +94,14 @@ $(document).ready(function () {
 
     $("#statusUpdate").on("keyup", function() {
         var wordLen = $(this).val().length;
-        console.log(wordLen)
-        $("#pointEl").text(points - wordLen)
+        console.log(wordLen);
+        $("#pointEl").text(points - wordLen);
     })
 
     function storePoints (id,points) {
         $.ajax({
             method: "PUT",
             url:"/api/user-points/" + id + "/" + points,
-        }).then(function(res){
-
-        });
+        }).then(function(res){});
     }
 });

@@ -13,8 +13,6 @@ $(document).ready(function () {
     $.get('/api/user', function (data) {
         userId = data.id;
         userPoints = data.points;
-
-        console.log(data);
     }).then(function () {
         $.get('/api/game/' + userId, function (data) {
             userData = data[0];
@@ -198,12 +196,7 @@ $(document).ready(function () {
 
             function updatePoints(id, points) {
                 $.get("/api/users/" + id, function(res) {
-                    console.log(res.availablePoints);
-                    console.log(points);
-
                     var newPoints = res.availablePoints + points / 5;
-
-                    console.log(newPoints);
 
                     $.ajax({
                         method: "PUT",
