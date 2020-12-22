@@ -8,18 +8,20 @@ $(document).ready(function () {
     var userData;
     var userId;
 
+    var userPoints
+
     $.get('/api/user', function (data) {
-        console.log(data)
         userId = data.id
+        userPoints = data.points
+
+        console.log(data)
     }).then(function () {
         $.get('/api/game/' + userId, function (data) {
             userData = data[0];
-            console.log(userData)
 
             //
             $.get('/api/get-word/', function (data) {
                 word = data.toUpperCase()
-                console.log(word)
 
                 wordArr = [...word]
 
@@ -136,6 +138,7 @@ $(document).ready(function () {
                     $('#points').text(score);
                     complete()
                 }
+                
                 else {
                     let currNum = $('#points').text()
                     score = parseInt(currNum) - 10;
@@ -157,6 +160,8 @@ $(document).ready(function () {
                     resetWin()
                 }
                 else {
+
+                    updatePoints(userData.UserId,score)
 
                     currWinStreak++;
                     currCombineScore += score;
@@ -205,6 +210,26 @@ $(document).ready(function () {
                 }).then(function(res){
 
                 })
+            }
+
+            function updatePoints(id,points) {
+
+                $.get("/api/users/" + id, function(res) {
+                    console.log(res.availablePoints)
+                    console.log(points)
+
+                    var newPoints = res.availablePoints + points / 5
+
+                    console.log(newPoints)
+
+                    $.ajax({
+                        method: "PUT",
+                        url:"/api/user-points/" + id + "/" + newPoints,
+                    }).then(function(res){
+    
+                    })
+                })
+
             }
         });
     });

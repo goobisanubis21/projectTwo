@@ -1,19 +1,45 @@
-#inputArea{
+.navbar-custom{
+  background-color: rgb(16, 17, 31);
+}
+
+#inputArea {
     display: flex;
     justify-content: center;
 }
 
+<<<<<<< HEAD
 .container-fluid{
   background-color:  rgb(32, 190, 143);
-  z-index: 1;
-  left: 2
+=======
+body {
+  background-color: rgb(39, 39, 39);
+  margin-left: 250px;
 }
 
-h1{
-  font-family: 'Monofett', cursive;
-  font-size: 45px;
-  color: purple;
+#descript {
+  text-align: center;
+  width: 1000px;
+  margin-left: 25%;
+  margin-bottom: 40px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+/* .container-fluid {
+  background-color:  rgb(29, 66, 134);
+>>>>>>> c7027a660b3c840d928dcec0c3287c2f3406a071
+  z-index: 1;
+  left: 2
+} */
+
+#status {
+    position: relative;
+    float: right;
+}
+
+#updateStatus{
+  color: white;
+}
+<<<<<<< HEAD
 
 .navbar-expand-lg{
   padding-left: 250px;
@@ -81,4 +107,42 @@ h1{
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
+=======
+  
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+#btnSubmit {
+  margin-bottom: 20px;
+}
+
+.btn-outline {
+border-radius: 15px;
+color:purple;
+font-size: 20px;
+}
+
+.profilePic {
+  width: 50px;
+  float: left;
+  margin: 10px;
+}
+
+.card{
+  display: flex;
+  justify-content: center;
+  margin-left: 150px;
+  margin-right: 150px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+}
+
+.card-body{
+  background-color: rgb(16, 17, 31);
+  color: white;
+  border-radius: 12px;
+>>>>>>> c7027a660b3c840d928dcec0c3287c2f3406a071
 }

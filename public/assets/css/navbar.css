@@ -1,0 +1,66 @@
+#navTitle {
+  font-family: 'Bungee Outline', cursive;
+    font-size: 100px;
+    color: purple;
+    display: flex;
+    justify-content: center;
+}
+
+.material-icons-outlined{
+  color: purple;
+  font-size: 25px;
+  padding: 10px;
+}
+
+#deleteMe {
+  font-size: 20px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.sidenav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(16, 17, 31);
+    overflow-x: hidden;
+   transition:all 0.2 cubic-bezier(0.19, 1, 0.22, 1);
+
+  }
+  
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    display: block;
+  }
+  
+  .sidenav a:hover {
+    color: purple;
+    cursor: pointer;
+  }
+
+  .sidenavCollapsed {
+    left: -250px;
+  }
+
+  #container :hover{
+    background-color: white;
+    border-radius: 15px;
+  }
+
+  hr.solid {
+    border-top: 1px solid #bbb;
+  }
+
+
+
+  @media screen and (max-width: 1800px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
