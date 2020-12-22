@@ -82,11 +82,9 @@ $(document).ready(function () {
             points = data.availablePoints;
             console.log(points);
         }).then(function() {
-            let pointEl = $("<p>");
+            let pointEl = $("#pointEl");
             pointEl.text(points);
-            // pointEl.css("text-align", "right");
             pointEl.css("color", "white");
-            // pointEl.attr("id", "pointEl");
             $("#statusUpdate").attr("maxlength", points)
             $("#status-body").append(pointEl);
         })
