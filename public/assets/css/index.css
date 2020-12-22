@@ -59,4 +59,11 @@ font-size: 20px;
   margin-left: 150px;
   margin-right: 150px;
   margin-bottom: 20px;
+  border-radius: 12px;
+}
+
+.card-body{
+  background-color: rgb(16, 17, 31);
+  color: white;
+  border-radius: 12px;
 }
