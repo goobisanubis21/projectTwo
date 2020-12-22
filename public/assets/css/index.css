@@ -5,6 +5,7 @@
 
 body {
   background-color: rgb(39, 39, 39);
+  margin-left: 250px;
 }
 
 #descript {
@@ -34,4 +35,10 @@ body {
   margin-left: 160px; /* Same as the width of the sidenav */
   font-size: 28px; /* Increased text to enable scrolling */
   padding: 0px 10px;
+}
+
+.btn-outline{
+border-radius: 15px;
+color:purple;
+font-size: 20px;
 }

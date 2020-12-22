@@ -1,6 +1,6 @@
 body{
-    margin-left: 100px !important;
-    margin-right: 100px;
+    margin-left: 250px;
+    /* margin-right: 100px; */
 }
 
 #scoreTitles {
@@ -70,4 +70,9 @@ body {
     color: white;
 }
 
+.btn-outline{
+    border-radius: 15px;
+    color:purple;
+    font-size: 20px;
+    }
 

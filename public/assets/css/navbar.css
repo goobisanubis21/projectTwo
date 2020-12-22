@@ -28,6 +28,7 @@
     left: 0;
     background-color: rgb(16, 17, 31);
     overflow-x: hidden;
+   transition:all 0.2 cubic-bezier(0.19, 1, 0.22, 1);
 
   }
   
@@ -42,6 +43,10 @@
   .sidenav a:hover {
     color: purple;
     cursor: pointer;
+  }
+
+  .sidenavCollapsed {
+    left: -250px;
   }
 
   #container :hover{
