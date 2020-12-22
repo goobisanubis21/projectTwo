@@ -5,9 +5,7 @@ $(document).ready(function () {
         console.log(data);
         for (let i = 0; i < data.length; i++) {
             let card = $("<div>").addClass("card");
-            card.attr("id", "centerThis");
-
-            let cardBody = $("<div>").addClass("card-body");
+            let cardBody = $("<div>").addClass("card-body").attr("id", "centerThis");
             card.append(cardBody);
 
             let cardTitle = $("<h5>").addClass("card-title");
