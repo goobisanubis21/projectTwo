@@ -15,7 +15,7 @@
 #deleteMe {
   font-size: 20px;
   position: absolute;
-  left: 0;
+  right: 0;
   bottom: 0;
 }
 
@@ -28,6 +28,8 @@
     left: 0;
     background-color: rgb(16, 17, 31);
     overflow-x: hidden;
+   transition:all 0.2 cubic-bezier(0.19, 1, 0.22, 1);
+
   }
   
   .sidenav a {
@@ -43,6 +45,10 @@
     cursor: pointer;
   }
 
+  .sidenavCollapsed {
+    left: -250px;
+  }
+
   #container :hover{
     background-color: white;
     border-radius: 15px;
@@ -52,7 +58,9 @@
     border-top: 1px solid #bbb;
   }
 
-  @media screen and (max-height: 450px) {
+
+
+  @media screen and (max-width: 1800px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
   }

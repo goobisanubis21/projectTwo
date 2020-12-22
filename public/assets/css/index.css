@@ -5,6 +5,7 @@
 
 body {
   background-color: rgb(39, 39, 39);
+  margin-left: 250px;
 }
 
 #descript {
@@ -36,7 +37,14 @@ body {
   padding: 0px 10px;
 }
 
-.profilePic{
+
+.btn-outline {
+border-radius: 15px;
+color:purple;
+font-size: 20px;
+}
+
+.profilePic {
   width: 50px;
   float: left;
   margin: 10px;
