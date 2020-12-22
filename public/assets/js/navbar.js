@@ -1,27 +1,50 @@
 $(document).ready(function () {
-    $("body").prepend(` <nav class="navbar navbar-expand-lg navbar-light bg-light">
-<div class="container-fluid">
-    <a class="navbar-brand" href="#">HangdOut</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-        aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/highscores">Highscores</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/login">Logout</a>
-            </li>
-        </ul>
-        
-         
-    </div>
-</div>
-</nav>`);
+    var openNav = true;
+    $("body").prepend(`
+    <div class="sidenav" id="navbar">
+        <a href="/">
+        <h1 id="navTitle"> H </h1></a>
+        <div id="container" > <a href="/"> <span class="material-icons-outlined">
+        home
+        </span> Home</a> </div>
+        <hr class="solid">
+        <div id="container"> <a href="/highscore"><span class="material-icons-outlined">
+        score
+        </span>Highscores</a> </div>
+        <hr class="solid">
+        <div id="container"> <a href="/game"><span class="material-icons-outlined">
+        videogame_asset
+        </span>Play Hangman</a> </div>
+        <hr class="solid">
+        <div id="container"> <a href="/login"><span class="material-icons-outlined">
+        power_settings_new
+        </span>Logout</a> </div>
+        <button class="btn btn-danger" id = "deleteMe">Delete Account</button>
+    </div>`);
+
+    $("#deleteMe").on("click", function () {
+        var userId;
+        $.get("/api/user", function (data) {
+            userId = data.id;
+        }).then(function () {
+            $.ajax({
+                method: "DELETE",
+                url: "/api/users/" + userId
+            }).then(function () {
+                window.location.replace("/login");
+            });
+        });
+    });
+
+    $("#hideNav").on("click", function () {
+        if (openNav) {
+            $("#navbar").addClass("sidenavCollapsed");
+            $("body").css("margin-left", "0px");
+            openNav = false;
+        } else {
+            $("#navbar").removeClass("sidenavCollapsed");
+            $("body").css("margin-left", "250px");
+            openNav = true;
+        }
+    });
 });

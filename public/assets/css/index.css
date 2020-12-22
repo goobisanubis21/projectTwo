@@ -1,0 +1,84 @@
+.navbar-custom{
+  background-color: rgb(16, 17, 31);
+}
+
+#inputArea {
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  background-color: rgb(39, 39, 39);
+  margin-left: 250px;
+}
+
+#descript {
+  text-align: center;
+  width: 1000px;
+  margin-left: 25%;
+  margin-bottom: 40px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#status {
+  position: relative;
+  float: right;
+}
+
+#updateStatus{
+  color: white;
+}
+  
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+#btnSubmit {
+  margin-bottom: 20px;
+  float: right;
+}
+
+.btn-outline {
+  border-radius: 15px;
+  color:purple;
+  font-size: 20px;
+}
+
+.profilePic {
+  width: 50px;
+  float: left;
+  margin: 10px;
+}
+
+.card{
+  display: flex;
+  justify-content: center;
+  margin-left: 150px;
+  margin-right: 150px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+}
+
+.card-body{
+  background-color: rgb(16, 17, 31);
+  color: white;
+  border-radius: 12px;
+}
+
+#cardStatus {
+  width: 50%;
+  margin: 20px;
+}
+
+/* #statusUpdate{
+  width: 40%;
+} */
+.col-md-4{
+  width: 100%
+}
+
+#pointEl{
+  display: inline;
+}

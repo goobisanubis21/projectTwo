@@ -1,0 +1,79 @@
+body{
+    margin-left: 250px;
+    /* margin-right: 100px; */
+}
+
+.navbar-custom{
+    background-color: rgb(16, 17, 31);
+}
+
+#scoreTitles {
+    padding:20px 0px;
+    text-align: center;
+    color: white;
+}
+
+h3 {
+    text-align: center;
+    background-color:  rgb(39, 39, 39);
+    margin-bottom: 10px !important;
+    padding: 5px;
+    border-radius: 15px;
+    color: white;
+}
+
+p {
+    font-size: 20px;
+    text-align: center;
+    color:white
+    /* border-bottom: solid;
+    border-width: 2px;
+    border-color: #a3a3a3; */
+}
+
+#backgroundColor {
+    background-color:rgb(39, 39, 39);
+    min-height: calc(100vh - 56px);
+    padding: 40px 0px;
+}
+
+.container {
+    margin-top: 30px;
+    margin-bottom: 40px;
+    margin-left: 200px;
+    background-color: rgb(16, 17, 31);
+    -webkit-box-shadow: 0px 0px 16px 10px rgba(163,163,163,0.24); 
+    box-shadow: 0px 0px 16px 10px rgba(163,163,163,0.24);    
+}
+
+#yourHighscore {
+    width: 60%;
+    border-radius: 15px;
+}
+
+#leaderboard {
+    width: 60%;
+    border-radius: 15px;
+}
+
+body {
+    background-color:  rgb(39, 39, 39);
+}
+
+#gUser{
+    color: white;
+}
+
+#gStreak{
+    color: white;
+}
+
+#gScore{
+    color: white;
+}
+
+.btn-outline{
+    border-radius: 15px;
+    color:purple;
+    font-size: 20px;
+}

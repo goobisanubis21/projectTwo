@@ -6,11 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Monofett&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../public/assets/css/signup.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Monofett&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/signup.css">
   <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="./assets/js/hang.js"></script>
+  <script src="./assets/js/signup.js"></script>
   <title>Sign Up</title>
 </head>
 
@@ -21,29 +21,33 @@
     <div class="card">
       <div class="card-body">
         <p>Sign up below if you dont already have an account with us!</p>
+        
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="floatingInput" placeholder="username">
-          <label for="floatingInput">Create a Username</label>
+          <input type="text" class="form-control" id="Username" placeholder="username">
+          <label for="Username">Create a Username</label>
         </div>
 
         <div class="form-floating">
-          <input type="password" class="form-control" id="floatingInput" placeholder="Password">
-          <label for="floatingPassword">Password</label>
+          <input type="password" class="form-control" id="Password" placeholder="Password">
+          <label for="Password">Password</label>
         </div>
 
         <div class="form-floating">
-          <input type="password" class="form-control" id="floatingInput" placeholder="Password">
-          <label for="floatingPassword">Confirm Password</label>
+          <input type="password" class="form-control" id="Confirm" placeholder="Password">
+          <label for="Confirm">Confirm Password</label>
         </div>
-      </br>
+        </br>
+
         <button class="btn btn-danger" id="btnSignUp" type="submit"> Sign Up </button>
-
       </div>
     </div>
   </div>
 
+  <div class="container">
+    <div id="err"></div>
+  </div>
+
   <script src="https://code.jquery.com/jquery.js"></script>
-  <!-- <script src="./assets/js/navbar.js"></script> -->
 </body>
 
 </html>

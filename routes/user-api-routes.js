@@ -1,4 +1,5 @@
 var db = require("../models");
+var passport = require("../config/passport");
 
 module.exports = function (app) {
   app.get("/api/users/:id", function (req, res) {
@@ -9,6 +10,10 @@ module.exports = function (app) {
     }).then(function (data) {
       res.json(data);
     });
+  });
+
+  app.post("/api/login", passport.authenticate("local"), function (req, res) {
+    res.json(req.user);
   });
 
   app.post("/api/signup", function (req, res) {
@@ -30,31 +35,27 @@ module.exports = function (app) {
     });
   });
 
-  app.put("/api/user-score/:id/:score", function (req, res) {
+  //update user points available
+  app.put("/api/user-points/:id/:points", function (req, res) {
     db.User.update({
-      highestScore: req.params.score
+      availablePoints: req.params.points
     }, {
       where: {
         id: req.params.id
       }
     }).then(function (data) {
       res.json(data);
-    }).catch(function (err) {
-      res.json(err);
-    });
+    })
   });
 
-  app.put("/api/user-password/:id", function (req, res) {
-    db.User.update({
-      password: req.body.password
-    }, {
-      where: {
-        id: req.params.id
-      }
-    }).then(function (data) {
-      res.json(data);
-    }).catch(function (err) {
-      res.json(err);
-    });
+  app.get("/api/user", function (req, res) {
+    if (!req.user) {
+      res.json({});
+    } else {
+      var id = res.json({
+        email: req.user.email,
+        id: req.user.id
+      });
+    }
   });
 };
