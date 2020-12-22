@@ -1,22 +1,9 @@
 $(document).ready(function () {
     const statusArea = $("#statuses");
 
-<<<<<<< HEAD
-    $.get("/api/status/").then(function (data) {
-        console.log(data);
-        for (let i = 0; i < data.length; i++) {
-            let card = $("<div>").addClass("card");
-            let cardBody = $("<div>").addClass("card-body").attr("id", "centerThis");
-            card.append(cardBody);
-
-            let cardTitle = $("<h5>").addClass("card-title");
-            cardTitle.text(data[i].User.email);
-            cardBody.append(cardTitle);
-=======
     var userId;
     var statusData;
     var points;
->>>>>>> c7027a660b3c840d928dcec0c3287c2f3406a071
 
     $.get("/api/user/", function (res) {
         userId = res.id;
@@ -39,47 +26,6 @@ $(document).ready(function () {
     function getStatus () {
         $.get("/api/status/").then(function (data) {
 
-<<<<<<< HEAD
-    $.get("/api/user/", function (data) {
-        userId = data.id;
-    }).then(function () {
-        $("#btnSubmit").on("click", function () {
-            $.post("/api/status/", {
-                text: $("#statusUpdate").val(),
-                id: userId
-            }).then(function () {
-                statusArea.empty();
-                $.get("/api/status/").then(function (data) {
-                    console.log(data);
-                    for (let i = 0; i < data.length; i++) {
-                        let card = $("<div>").addClass("card");
-                        let cardBody = $("<div>").addClass("card-body");
-                        card.append(cardBody);
-
-                        let cardTitle = $("<h5>").addClass("card-title");
-                        cardTitle.text(data[i].User.email);
-                        cardBody.append(cardTitle);
-
-                        let cardText = $("<p>").addClass("card-text");
-                        cardText.text(data[i].text);
-                        cardBody.append(cardText);
-
-                        if (data[i].UserId === userId) {
-                            let delBtn = $("<button>").addClass("btn btn-warning");
-                            delBtn.attr("type", "button");
-                            delBtn.text("Delete")
-                            cardBody.append(delBtn);
-                        }
-
-                        statusArea.prepend(card);
-                    }
-                });
-            });
-        });
-
-        $(".btn-warning").on("click", function () {
-
-=======
             statusData = data;
 
             for (let i = 0; i < statusData.length; i++) {
@@ -128,7 +74,6 @@ $(document).ready(function () {
         
                 }
             })
->>>>>>> c7027a660b3c840d928dcec0c3287c2f3406a071
         });
     }
 
