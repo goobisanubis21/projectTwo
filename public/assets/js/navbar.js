@@ -1,15 +1,15 @@
 $(document).ready(function () {
     var openNav = true;
     $("body").prepend(`
-        <div class="sidenav" id="navbar">
+    <div class="sidenav" id="navbar">
         <a href="/">
         <h1 id="navTitle"> H </h1></a>
         <div id="container" > <a href="/"> <span class="material-icons-outlined">
-        Home
+        home
         </span> Home</a> </div>
         <hr class="solid">
         <div id="container"> <a href="/highscore"><span class="material-icons-outlined">
-        Score
+        score
         </span>Highscores</a> </div>
         <hr class="solid">
         <div id="container"> <a href="/game"><span class="material-icons-outlined">
@@ -35,8 +35,8 @@ $(document).ready(function () {
             });
         });
     });
-    
-    $("#hideNav").on("click", function(){
+
+    $("#hideNav").on("click", function () {
         if (openNav) {
             $("#navbar").addClass("sidenavCollapsed");
             $("body").css("margin-left", "0px");
