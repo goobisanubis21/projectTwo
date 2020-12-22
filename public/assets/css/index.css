@@ -20,12 +20,6 @@ body {
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-/* .container-fluid {
-  background-color:  rgb(29, 66, 134);
-  z-index: 1;
-  left: 2
-} */
-
 #status {
     position: relative;
     float: right;
@@ -70,4 +64,13 @@ font-size: 20px;
   background-color: rgb(16, 17, 31);
   color: white;
   border-radius: 12px;
+}
+
+#cardStatus {
+  width: 60%;
+  margin: 20px;
+}
+
+#status-body {
+  
 }
