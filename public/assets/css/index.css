@@ -37,6 +37,7 @@ body {
 
 #btnSubmit {
   margin-bottom: 20px;
+  float: right;
 }
 
 .btn-outline {
@@ -67,6 +68,17 @@ body {
 }
 
 #cardStatus {
-  width: 60%;
+  width: 50%;
   margin: 20px;
+}
+
+/* #statusUpdate{
+  width: 40%;
+} */
+.col-md-4{
+  width: 100%
+}
+
+#pointEl{
+  display: inline;
 }

@@ -83,12 +83,12 @@ $(document).ready(function () {
             console.log(points);
         }).then(function() {
             let pointEl = $("<p>");
-            pointEl.text(points)
-            pointEl.css("text-align", "center");
+            pointEl.text(points);
+            // pointEl.css("text-align", "right");
             pointEl.css("color", "white");
-            pointEl.attr("id", "pointEl");
+            // pointEl.attr("id", "pointEl");
             $("#statusUpdate").attr("maxlength", points)
-            $("body").append(pointEl);
+            $("#status-body").append(pointEl);
         })
     }
 
