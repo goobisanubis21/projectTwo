@@ -25,7 +25,7 @@ $(document).ready(function () {
         }).then(function (data) {
             $.post("/api/game/" + data.id, function(data) {
                 window.location.replace("/login");
-            })
+            });
         });
     }
 });

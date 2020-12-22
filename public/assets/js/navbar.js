@@ -1,15 +1,15 @@
 $(document).ready(function () {
     var openNav = true;
     $("body").prepend(`
-<div class="sidenav" id="navbar">
+        <div class="sidenav" id="navbar">
         <a href="/">
         <h1 id="navTitle"> H </h1></a>
         <div id="container" > <a href="/"> <span class="material-icons-outlined">
-        home
+        Home
         </span> Home</a> </div>
         <hr class="solid">
         <div id="container"> <a href="/highscore"><span class="material-icons-outlined">
-        score
+        Score
         </span>Highscores</a> </div>
         <hr class="solid">
         <div id="container"> <a href="/game"><span class="material-icons-outlined">
@@ -32,16 +32,16 @@ $(document).ready(function () {
                 url: "/api/users/" + userId
             }).then(function () {
                 window.location.replace("/login")
-            })
-        })
-    })
+            });
+        });
+    });
     
     $("#hideNav").on("click", function(){
         if (openNav) {
-        $("#navbar").addClass("sidenavCollapsed");
-        $("body").css("margin-left", "0px");
-        // $("#hideNav").text("Expand")
-        openNav = false;
+            $("#navbar").addClass("sidenavCollapsed");
+            $("body").css("margin-left", "0px");
+            // $("#hideNav").text("Expand")
+            openNav = false;
         } else {
             $("#navbar").removeClass("sidenavCollapsed");
             $("body").css("margin-left", "250px")

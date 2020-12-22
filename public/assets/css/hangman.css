@@ -49,11 +49,6 @@
     margin-right: 0px;
 }
 
-/* .scoreContainer > button {
-    height: 35px;
-    line-height: auto;
-} */
-
 .hangmanContainer {
     display: flex;
     flex-direction: column;
@@ -86,7 +81,6 @@
     align-items: center;
     padding: 10px 20px;
     height: auto;
-    /* background-color: yellow; */
     font-size: 0.85em;
     max-width: 80%;
     flex-wrap: wrap;
@@ -161,23 +155,24 @@
         flex-direction: column;
     }
     
-.scoreContainer > * {
-    margin-right: 0px;
-}
+    .scoreContainer > * {
+        margin-right: 0px;
+    }
 
-.scoreContainer > p:first-child, .scoreContainer > button {
-    margin-right: 0px;
-}
+    .scoreContainer > p:first-child, .scoreContainer > button {
+        margin-right: 0px;
+    }
 
-.scoreContainer > button:last-child {
-    margin-right: 0px;
-}
+    .scoreContainer > button:last-child {
+        margin-right: 0px;
+    }
+
     .hangmanContainer  {
         width:40%
     }
+
     #gameImage {
         margin-top: 40px;
         height: 300px;
     }
-
-  }
+}

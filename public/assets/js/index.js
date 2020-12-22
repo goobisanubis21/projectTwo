@@ -104,6 +104,6 @@ $(document).ready(function () {
             url:"/api/user-points/" + id + "/" + points,
         }).then(function(res){
 
-        })
+        });
     }
 });
