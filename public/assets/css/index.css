@@ -3,8 +3,8 @@
 }
 
 #inputArea {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 body {
@@ -20,15 +20,9 @@ body {
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-/* .container-fluid {
-  background-color:  rgb(29, 66, 134);
-  z-index: 1;
-  left: 2
-} */
-
 #status {
-    position: relative;
-    float: right;
+  position: relative;
+  float: right;
 }
 
 #updateStatus{
@@ -46,9 +40,9 @@ body {
 }
 
 .btn-outline {
-border-radius: 15px;
-color:purple;
-font-size: 20px;
+  border-radius: 15px;
+  color:purple;
+  font-size: 20px;
 }
 
 .profilePic {
