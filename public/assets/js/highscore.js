@@ -1,8 +1,6 @@
 $(document).ready(function(){
     $.get('/api/game/', function(data) {
 
-        console.log(data)
-
         $.get('/api/user', function(res){
 
             const userData = data.find( ({ UserId }) => UserId === res.id );

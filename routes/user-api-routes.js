@@ -68,8 +68,7 @@ module.exports = function (app) {
     } else {
       var id = res.json({
         email: req.user.email,
-        id: req.user.id,
-        points: req.user.availablePoints
+        id: req.user.id
       });
     }
   });

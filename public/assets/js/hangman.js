@@ -160,9 +160,8 @@ $(document).ready(function () {
                     resetWin()
                 }
                 else {
-                    console.log(score + userPoints)
 
-                    updatePoints(userData.UserId,score + userPoints)
+                    updatePoints(userData.UserId,score)
 
                     currWinStreak++;
                     currCombineScore += score;
@@ -214,21 +213,23 @@ $(document).ready(function () {
             }
 
             function updatePoints(id,points) {
-                // $.post("/api/user-points/", {
-                //     availablePoints: userData.availablePoints + points,
-                //     id: id
-                // }).then(function (data) {
-                    
-                // });
 
-                console.log(id)
+                $.get("/api/users/" + id, function(res) {
+                    console.log(res.availablePoints)
+                    console.log(points)
 
-                $.ajax({
-                    method: "PUT",
-                    url:"/api/user-points/" + id + "/" + points,
-                }).then(function(res){
+                    var newPoints = res.availablePoints + points / 5
 
+                    console.log(newPoints)
+
+                    $.ajax({
+                        method: "PUT",
+                        url:"/api/user-points/" + id + "/" + newPoints,
+                    }).then(function(res){
+    
+                    })
                 })
+
             }
         });
     });
