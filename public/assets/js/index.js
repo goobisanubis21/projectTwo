@@ -3,12 +3,13 @@ $(document).ready(function () {
 
     var userId;
     var statusData;
+    var points;
 
     $.get("/api/user/", function (res) {
         userId = res.id;
     }).then(function () {
-        getStatus () 
-    
+        getStatus ()
+        getPoints(userId)
     });
 
     $("#btnSubmit").on("click", function () {
@@ -18,6 +19,7 @@ $(document).ready(function () {
         }).then(function () {
             statusArea.empty();
             getStatus ()
+
         });
     });
 
@@ -75,7 +77,24 @@ $(document).ready(function () {
         });
     }
 
-    function getPoints() {
-
+    function getPoints(userId) {
+        $.get("/api/users/" + userId, function(data) {
+            points = data.availablePoints
+            console.log(points);
+        }).then(function() {
+            let pointEl = $("<p>");
+            pointEl.text(points)
+            pointEl.css("text-align", "center");
+            pointEl.css("color", "white");
+            pointEl.attr("id", "pointEl");
+            $("#statusUpdate").attr("maxlength", points)
+            $("body").append(pointEl);
+        })
     }
+
+    $("#statusUpdate").on("keyup", function() {
+        var wordLen = $(this).val().length;
+        console.log(wordLen)
+        $("#pointEl").text(points - wordLen)
+    })
 });
