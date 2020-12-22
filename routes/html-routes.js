@@ -1,6 +1,6 @@
 var path = require("path");
 
-var isAuthenticated = require("../config/middlewear/isAuthenticated");
+var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
     app.get("/", isAuthenticated, function(req, res) {
