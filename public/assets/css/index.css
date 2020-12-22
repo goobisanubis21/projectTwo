@@ -37,6 +37,9 @@ body {
   padding: 0px 10px;
 }
 
+#btnSubmit {
+  margin-bottom: 20px;
+}
 
 .btn-outline {
 border-radius: 15px;
