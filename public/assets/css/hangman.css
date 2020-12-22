@@ -1,3 +1,7 @@
+body{
+    margin-left: 140px !important;
+}
+
 #gameContainer {
     /* width: 100vw; */
     /* height: 100vh; */
@@ -17,6 +21,7 @@
     width: 60%;
     max-width: 1200px;
     border-radius: 15px;
+    
 
     /* border: solid;
     border-width: 3px; */
@@ -153,3 +158,24 @@
 .hidden {
     display: none !important;
 }
+
+/* @media screen and (min-width: 1800px) {
+    .scoreContainer {
+        width: 40%;
+        flex-direction: column;
+    }
+    
+.scoreContainer > * {
+    margin-right: 0px;
+}
+
+.scoreContainer > p:first-child, .scoreContainer > button {
+    margin-right: 0px;
+}
+
+.scoreContainer > button:last-child {
+    margin-right: 0px;
+}
+    .hangmanContainer  {width:40%}
+
+  } */
