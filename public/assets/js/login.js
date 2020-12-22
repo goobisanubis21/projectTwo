@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $("#btnSignUp").on("click", function () {
-        window.location = "/signup"
+        window.location = "/signup";
     });
 
     var emailInput = $("#username");

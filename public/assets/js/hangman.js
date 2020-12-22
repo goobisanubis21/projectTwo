@@ -1,8 +1,8 @@
 $(document).ready(function () {
-    var clicked = []
-    var wordArr = []
+    var clicked = [];
+    var wordArr = [];
     var numWrong = 0;
-    var word
+    var word;
     var score = 100;
 
     var userData;
@@ -11,28 +11,27 @@ $(document).ready(function () {
     var userPoints
 
     $.get('/api/user', function (data) {
-        userId = data.id
-        userPoints = data.points
+        userId = data.id;
+        userPoints = data.points;
 
-        console.log(data)
+        console.log(data);
     }).then(function () {
         $.get('/api/game/' + userId, function (data) {
             userData = data[0];
 
-            //
             $.get('/api/get-word/', function (data) {
-                word = data.toUpperCase()
+                word = data.toUpperCase();
 
-                wordArr = [...word]
+                wordArr = [...word];
 
-                var wordLen = word.length
+                var wordLen = word.length;
 
                 for (let i = 0; i < wordLen; i++) {
                     $("#wordContainer").append(
                         `<div id="letter${i}" class="incorrectLetter"></div>`
-                    )
+                    );
                 }
-            })
+            });
 
             //Get user data on page load
 
@@ -42,52 +41,51 @@ $(document).ready(function () {
             var currCombineScore = userData.currCombineScore;
 
             $(".letterButton").on('click', function () {
-                $(this).prop('disabled', true)
-                var letterClicked = $(this).attr('data-letter')
-                clicked.push(letterClicked)
+                $(this).prop('disabled', true);
+                var letterClicked = $(this).attr('data-letter');
+                clicked.push(letterClicked);
 
                 if (wordArr.includes(letterClicked)) {
-                    var letterIndex = []
+                    var letterIndex = [];
 
                     wordArr.forEach((e, i) => {
                         if (letterClicked == e) {
-                            letterIndex.push(i)
+                            letterIndex.push(i);
                         }
                     });
 
                     letterIndex.forEach(e => {
-                        $("#letter" + e).text(letterClicked)
-                        $("#letter" + e).removeClass("incorrectLetter")
+                        $("#letter" + e).text(letterClicked);
+                        $("#letter" + e).removeClass("incorrectLetter");
                     });
 
                     if (document.getElementsByClassName('incorrectLetter').length == 0) {
-                        complete()
+                        complete();
                     }
 
                 }
                 else {
                     numWrong++;
-                    wrongLetter(numWrong)
-
+                    wrongLetter(numWrong);
                 }
-            })
+            });
 
             $("#guessButton").on('click', function () {
-                let guess = prompt("what is your guess")
+                let guess = prompt("what is your guess");
 
                 if (word == guess.toUpperCase()) {
                     let currNum = $('#points').text();
                     score = parseInt(currNum);
-                    complete()
+                    complete();
                 }
                 else {
                     numWrong++;
-                    wrongLetter(numWrong)
+                    wrongLetter(numWrong);
                 }
             });
 
             $("#cancelButton").on('click', function () {
-                if (confirm("are your sure you want to quit?")) {
+                if (confirm("Are your sure you want to quit?")) {
                     window.location.href = '/';
                 }
             });
@@ -100,13 +98,8 @@ $(document).ready(function () {
                 window.location.href = '/';
             });
 
-
-
-
             function wrongLetter(numWrong) {
-
                 switch (numWrong) {
-
                     case 1:
                         $("#gameImage").attr("src", "./assets/images/hangman/oneWrong.png");
                         break;
@@ -136,32 +129,31 @@ $(document).ready(function () {
                     //logic to end game
                     score = 0;
                     $('#points').text(score);
-                    complete()
+                    complete();
                 }
                 
                 else {
-                    let currNum = $('#points').text()
+                    let currNum = $('#points').text();
                     score = parseInt(currNum) - 10;
                     $('#points').text(score);
                 }
             }
 
             function disableAll() {
-                $(".gameButton").prop('disabled', true)
+                $(".gameButton").prop('disabled', true);
             }
 
             function complete() {
-                disableAll()
+                disableAll();
 
-                $("#finishModalContainer").removeClass('hidden')
+                $("#finishModalContainer").removeClass('hidden');
                 $("#finalScore").text(score);
 
                 if (score == 0) {
-                    resetWin()
+                    resetWin();
                 }
                 else {
-
-                    updatePoints(userData.UserId,score)
+                    updatePoints(userData.UserId,score);
 
                     currWinStreak++;
                     currCombineScore += score;
@@ -170,25 +162,21 @@ $(document).ready(function () {
                     $("#combineScore").text(currCombineScore);
 
                     if(currWinStreak > winStreak) {
-                        updateWin()
-                        newBest()
+                        updateWin();
+                        newBest();
                     }
 
                     else {
-                        updateWin()
+                        updateWin();
                     }
-
                 }
-
             }
 
             function updateWin() {
                 $.ajax({
                     method: "PUT",
                     url:"/api/game-score/" + userId + "/" + currWinStreak + "/" + currCombineScore
-                }).then(function(res){
-
-                })
+                }).then(function(res){});
             }
 
             function resetWin() {
@@ -198,38 +186,30 @@ $(document).ready(function () {
                 $.ajax({
                     method: "PUT",
                     url:"/api/game-score/" + userId + "/0/0"
-                }).then(function(res){
-                    
-                })
+                }).then(function(res){});
             }
 
             function newBest() {
                 $.ajax({
                     method: "PUT",
                     url:"/api/game-best/" + userId + "/" + currWinStreak + "/" + currCombineScore
-                }).then(function(res){
-
-                })
+                }).then(function(res){});
             }
 
-            function updatePoints(id,points) {
-
+            function updatePoints(id, points) {
                 $.get("/api/users/" + id, function(res) {
-                    console.log(res.availablePoints)
-                    console.log(points)
+                    console.log(res.availablePoints);
+                    console.log(points);
 
-                    var newPoints = res.availablePoints + points / 5
+                    var newPoints = res.availablePoints + points / 5;
 
-                    console.log(newPoints)
+                    console.log(newPoints);
 
                     $.ajax({
                         method: "PUT",
                         url:"/api/user-points/" + id + "/" + newPoints,
-                    }).then(function(res){
-    
-                    })
-                })
-
+                    }).then(function(res){});
+                });
             }
         });
     });

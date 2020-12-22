@@ -3,8 +3,8 @@
 }
 
 #inputArea {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 body {
@@ -21,8 +21,8 @@ body {
 }
 
 #status {
-    position: relative;
-    float: right;
+  position: relative;
+  float: right;
 }
 
 #updateStatus{
@@ -40,9 +40,9 @@ body {
 }
 
 .btn-outline {
-border-radius: 15px;
-color:purple;
-font-size: 20px;
+  border-radius: 15px;
+  color:purple;
+  font-size: 20px;
 }
 
 .profilePic {
