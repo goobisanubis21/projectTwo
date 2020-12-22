@@ -3,13 +3,8 @@
     justify-content: center;
 }
 
-body{
-  background-color: rgb(231, 231, 231);
-  
-}
 .container-fluid{
   background-color:  rgb(32, 190, 143);
-  
   z-index: 1;
   left: 2
 }
@@ -19,11 +14,12 @@ h1{
   font-size: 45px;
   color: purple;
 }
+
 .navbar-expand-lg{
   padding-left: 250px;
 }
 
-/* #imgBK{
+#imgBK{
   height: 100%;
   width: 100%;
   position: fixed;
@@ -31,59 +27,58 @@ h1{
   left: 250px;
   z-index: 2;
   opacity: .5;
-} 
+}
 
-#zIndex{
-  z-index: 100;
-  
-} */
+.centerThis {
+  width: 10px;
+}
 
 .sidenav {
-    height: 100%;
-    width: 250px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: rgb(32, 190, 143);
-    overflow-x: hidden;
-    /* padding-top: 10px; */
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(32, 190, 143);
+  overflow-x: hidden;
+  /* padding-top: 10px; */
 
-    /* background-image: url('../images/background/sidebar2.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: .85; */
-  }
+  /* background-image: url('../images/background/sidebar2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: .85; */
+}
   
-  .sidenav a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    color: white;
-    display: block;
-  }
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: block;
+}
   
-  .sidenav a:hover {
-    color: purple;
-  }
+.sidenav a:hover {
+  color: purple;
+}
 
-  #status{
-      position: relative;
-      float: right;
-  }
+#status{
+  position: relative;
+  float: right;
+}
 
-  .material-icons{
-      font-size: 24px;
-      color: purple
-  }
+.material-icons{
+  font-size: 24px;
+  color: purple
+}
   
-  .main {
-    margin-left: 160px; /* Same as the width of the sidenav */
-    font-size: 28px; /* Increased text to enable scrolling */
-    padding: 0px 10px;
-  }
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
   
-  @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-  }
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
