@@ -6,7 +6,7 @@
     font-size: 40px;
     justify-content: center;
     align-items: center;
-    background-color:rgb(32, 190, 143);
+    background-color: rgb(16, 17, 31);
 }
 
 .scoreContainer {
@@ -22,9 +22,9 @@
     border-width: 3px; */
     color: black;
     height: auto;
-    margin: 10vh 0px 60px 0px;
+    margin: 10vh 0px 60px 100px;
     padding: 30px 0px;
-    background-color:  white;
+    background-color:  rgb(167, 167, 167);
     -webkit-box-shadow: 0px 0px 16px 10px rgba(163,163,163,0.24); 
     box-shadow: 0px 0px 16px 10px rgba(163,163,163,0.24);
 }
@@ -58,12 +58,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    margin: 0px 0px 10vh 0px;
+    margin: 0px 0px 10vh 100px;
     min-height: auto;
     width: 60%;
     max-width: 1200px;
     border-radius: 15px;
-    background-color:  white;
+    background-color:  rgb(167, 167, 167);
     -webkit-box-shadow: 0px 0px 16px 10px rgba(163,163,163,0.24); 
     box-shadow: 0px 0px 16px 10px rgba(163,163,163,0.24);
 }

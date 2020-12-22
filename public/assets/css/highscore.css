@@ -1,26 +1,29 @@
 h1 {
     padding:20px 0px;
     text-align: center;
+    color: white;
 }
 
 h3 {
     text-align: center;
-    background-color: #DCEBF5;
+    background-color:  rgb(39, 39, 39);
     margin-bottom: 10px !important;
     padding: 5px;
     border-radius: 15px;
+    color: white;
 }
 
 p {
     font-size: 20px;
     text-align: center;
+    color:white
     /* border-bottom: solid;
     border-width: 2px;
     border-color: #a3a3a3; */
 }
 
 #backgroundColor {
-    background-color:#DCEBF5;
+    background-color:rgb(39, 39, 39);
     min-height: calc(100vh - 56px);
     padding: 40px 0px;
     
@@ -28,8 +31,10 @@ p {
 }
 
 .container {
+    margin-top: 30px;
     margin-bottom: 40px;
-    background-color: rgb(32, 190, 143);
+    margin-left: 320px;
+    background-color: rgb(16, 17, 31);
     -webkit-box-shadow: 0px 0px 16px 10px rgba(163,163,163,0.24); 
     box-shadow: 0px 0px 16px 10px rgba(163,163,163,0.24);
     
@@ -46,8 +51,18 @@ p {
 }
 
 body {
-    background-color: #DCEBF5;
+    background-color:  rgb(39, 39, 39);
 }
 
+#gUser{
+    color: white;
+}
+#gStreak{
+    color: white;
+}
+
+#gScore{
+    color: white;
+}
 
 

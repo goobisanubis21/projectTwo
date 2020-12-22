@@ -2,12 +2,23 @@ $(document).ready(function () {
     $("body").prepend(`
 <div class="sidenav">
         <a href="/">
-        <h1 id="navTitle"> HangdOut </h1></a>
-        <a href="/">Home</a>
-        <a href="/highscore">Highscores</a>
-        <a href="/game">Play Hangman</a>
-        <a href="/login">Logout</a>
-        <button id = "deleteMe">Delete Account</button>
+        <h1 id="navTitle"> H </h1></a>
+        <div id="container" > <a href="/"> <span class="material-icons-outlined">
+        home
+        </span> Home</a> </div>
+        <hr class="solid">
+        <div id="container"> <a href="/highscore"><span class="material-icons-outlined">
+        score
+        </span>Highscores</a> </div>
+        <hr class="solid">
+        <div id="container"> <a href="/game"><span class="material-icons-outlined">
+        videogame_asset
+        </span>Play Hangman</a> </div>
+        <hr class="solid">
+        <div id="container"> <a href="/login"><span class="material-icons-outlined">
+        power_settings_new
+        </span>Logout</a> </div>
+        <button class="btn btn-danger" id = "deleteMe">Delete Account</button>
     </div>`);
 
     $("#deleteMe").on("click", function () {

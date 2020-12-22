@@ -1,7 +1,22 @@
 #navTitle {
-    font-family: 'Monofett', cursive;
-    font-size: 45px;
+  font-family: 'Bungee Outline', cursive;
+    font-size: 100px;
     color: purple;
+    display: flex;
+    justify-content: center;
+}
+
+.material-icons-outlined{
+  color: purple;
+  font-size: 25px;
+  padding: 10px;
+}
+
+#deleteMe {
+  font-size: 20px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
 
 .sidenav {
@@ -11,20 +26,30 @@
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: rgb(32, 190, 143);
+    background-color: rgb(16, 17, 31);
     overflow-x: hidden;
   }
   
   .sidenav a {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
-    font-size: 25px;
-    color: white;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
     display: block;
   }
   
   .sidenav a:hover {
     color: purple;
+    cursor: pointer;
+  }
+
+  #container :hover{
+    background-color: white;
+    border-radius: 15px;
+  }
+
+  hr.solid {
+    border-top: 1px solid #bbb;
   }
 
   @media screen and (max-height: 450px) {
