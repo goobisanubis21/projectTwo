@@ -31,7 +31,7 @@ $(document).ready(function () {
                 method: "DELETE",
                 url: "/api/users/" + userId
             }).then(function () {
-                window.location("/login")
+                window.location.replace("/login")
             })
         })
     })
