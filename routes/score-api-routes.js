@@ -2,8 +2,9 @@ var db = require("../models");
 
 module.exports = function (app) {
   app.get("/api/game/", function (req, res) {
-    db.Score.findAll({include: [{model: db.User}],order:[['winStreak', 'DESC']]}).then(function (data) {
-      res.json(data);
+    db.Score.findAll({include: [{model: db.User}], 
+      order:[['winStreak', 'DESC']]}).then(function (data) {
+        res.json(data);
     });
   });
   
@@ -65,8 +66,4 @@ module.exports = function (app) {
       res.json(err);
     });
   });
-
-
-
-
 };
