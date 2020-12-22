@@ -5,7 +5,7 @@ body{
 
 .navbar-custom{
     background-color: rgb(16, 17, 31);
-  }
+}
 
 #scoreTitles {
     padding:20px 0px;
@@ -35,8 +35,6 @@ p {
     background-color:rgb(39, 39, 39);
     min-height: calc(100vh - 56px);
     padding: 40px 0px;
-    
-    
 }
 
 .container {
@@ -45,8 +43,7 @@ p {
     margin-left: 200px;
     background-color: rgb(16, 17, 31);
     -webkit-box-shadow: 0px 0px 16px 10px rgba(163,163,163,0.24); 
-    box-shadow: 0px 0px 16px 10px rgba(163,163,163,0.24);
-    
+    box-shadow: 0px 0px 16px 10px rgba(163,163,163,0.24);    
 }
 
 #yourHighscore {
@@ -66,6 +63,7 @@ body {
 #gUser{
     color: white;
 }
+
 #gStreak{
     color: white;
 }
@@ -78,5 +76,4 @@ body {
     border-radius: 15px;
     color:purple;
     font-size: 20px;
-    }
-
+}
