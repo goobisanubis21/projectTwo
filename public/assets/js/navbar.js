@@ -1,6 +1,7 @@
 $(document).ready(function () {
+    var openNav = true;
     $("body").prepend(`
-<div class="sidenav">
+<div class="sidenav" id="navbar">
         <a href="/">
         <h1 id="navTitle"> H </h1></a>
         <div id="container" > <a href="/"> <span class="material-icons-outlined">
@@ -34,4 +35,18 @@ $(document).ready(function () {
             })
         })
     })
+    
+    $("#hideNav").on("click", function(){
+        if (openNav) {
+        $("#navbar").addClass("sidenavCollapsed");
+        $("body").css("margin-left", "0px");
+        // $("#hideNav").text("Expand")
+        openNav = false;
+        } else {
+            $("#navbar").removeClass("sidenavCollapsed");
+            $("body").css("margin-left", "250px")
+            // $("#hideNav").text("Collapse")
+            openNav = true;
+        }
+    });
 });
