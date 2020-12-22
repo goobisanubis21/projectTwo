@@ -6,7 +6,7 @@
     font-size: 40px;
     justify-content: center;
     align-items: center;
-    background-color: #f5f5f5;
+    background-color:rgb(32, 190, 143);
 }
 
 .scoreContainer {
@@ -14,8 +14,9 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 60%;
     max-width: 1200px;
+    border-radius: 15px;
 
     /* border: solid;
     border-width: 3px; */
@@ -23,7 +24,7 @@
     height: auto;
     margin: 10vh 0px 60px 0px;
     padding: 30px 0px;
-    background-color: white;
+    background-color:  white;
     -webkit-box-shadow: 0px 0px 16px 10px rgba(163,163,163,0.24); 
     box-shadow: 0px 0px 16px 10px rgba(163,163,163,0.24);
 }
@@ -59,9 +60,10 @@
     justify-content: flex-start;
     margin: 0px 0px 10vh 0px;
     min-height: auto;
-    width: 80%;
+    width: 60%;
     max-width: 1200px;
-    background-color: white;
+    border-radius: 15px;
+    background-color:  white;
     -webkit-box-shadow: 0px 0px 16px 10px rgba(163,163,163,0.24); 
     box-shadow: 0px 0px 16px 10px rgba(163,163,163,0.24);
 }
