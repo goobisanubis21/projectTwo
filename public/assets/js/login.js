@@ -1,8 +1,8 @@
 $(document).ready(function () {
-    $("#btnSignUp").on("click", function() {
+    $("#btnSignUp").on("click", function () {
         window.location = "/signup"
     });
-    
+
     var emailInput = $("#username");
     var passwordInput = $("#password");
 
@@ -26,10 +26,12 @@ $(document).ready(function () {
         $.post("/api/login", {
             email: email,
             password: password
-        }).then(function (data) {
+        }).then(function () {
             window.location.replace("/");
         }).catch(function (err) {
-             console.log(err);
-        });
+            console.log(err);
+            $("#errorMessage").text("Invalid Username or Password");
+            $("#errorMessage").css("color", "red");
+        })
     }
 });
