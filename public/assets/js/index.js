@@ -34,6 +34,9 @@ $(document).ready(function () {
 
                 let cardTitle = $("<h5>").addClass("card-title");
                 cardTitle.text(statusData[i].User.email);
+                let cardImg = $("<img>").addClass("profilePic");
+                cardImg.attr("src", "https://davismarketingcompany.com/wp-content/uploads/2016/01/avatar_placeholder_small.png")
+                cardBody.append(cardImg);
                 cardBody.append(cardTitle);
 
                 let cardText = $("<p>").addClass("card-text");
@@ -45,7 +48,7 @@ $(document).ready(function () {
                     delBtn.attr("type", "button");
                     delBtn.attr("data-statusId", statusData[i].id)
                     delBtn.attr("data-userId", statusData[i].User.id)
-                    delBtn.text("Delete")
+                    delBtn.text("Delete Post")
                     cardBody.append(delBtn);
                 }
                 
@@ -70,5 +73,9 @@ $(document).ready(function () {
                 }
             })
         });
+    }
+
+    function getPoints() {
+
     }
 });
