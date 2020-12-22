@@ -28,10 +28,6 @@ $(document).ready(function () {
             password: password
         }).then(function () {
             window.location.replace("/");
-        }).catch(function (err) {
-            console.log(err);
-            $("#errorMessage").text("Invalid Username or Password");
-            $("#errorMessage").css("color", "red");
         })
     }
 });

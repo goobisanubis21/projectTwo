@@ -47,9 +47,7 @@ module.exports = function (app) {
       }
     }).then(function (data) {
       res.json(data);
-    }).catch(function (err) {
-      res.json(err);
-    });
+    })
   });
 
   app.put("/api/game-score/:id/:streak/:score", function (req, res) {
@@ -62,8 +60,6 @@ module.exports = function (app) {
       }
     }).then(function (data) {
       res.json(data);
-    }).catch(function (err) {
-      res.json(err);
-    });
+    })
   });
 };
