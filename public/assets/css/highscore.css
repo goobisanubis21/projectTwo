@@ -3,6 +3,10 @@ body{
     /* margin-right: 100px; */
 }
 
+.navbar-custom{
+    background-color: rgb(16, 17, 31);
+  }
+
 #scoreTitles {
     padding:20px 0px;
     text-align: center;
@@ -38,7 +42,7 @@ p {
 .container {
     margin-top: 30px;
     margin-bottom: 40px;
-    margin-left: 250px;
+    margin-left: 200px;
     background-color: rgb(16, 17, 31);
     -webkit-box-shadow: 0px 0px 16px 10px rgba(163,163,163,0.24); 
     box-shadow: 0px 0px 16px 10px rgba(163,163,163,0.24);
