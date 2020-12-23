@@ -20,6 +20,8 @@ $(document).ready(function () {
             $.get('/api/get-word/', function (data) {
                 word = data.toUpperCase();
 
+                console.log(word);
+
                 wordArr = [...word];
 
                 var wordLen = word.length;
